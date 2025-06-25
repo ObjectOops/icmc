@@ -1,0 +1,8 @@
+name: vscode-binder
+channels:
+  - conda-forge
+dependencies:
+  - jupyter-server-proxy
+  - jupyter-vscode-proxy
+  - code-server >=3.2
+  - openjdk
