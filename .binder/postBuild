@@ -2,5 +2,3 @@
 
 code-server --install-extension ms-python.python
 code-server --install-extension redhat.java
-
-echo 'export CODE_WORKINGDIR="~/workbench"' >> ~/.bashrc

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export CODE_WORKINGDIR=${REPO_DIR}/workbench
+
+exec "$@"
