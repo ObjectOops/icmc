@@ -1,0 +1,6 @@
+{
+    "extensions.ignoreRecommendations": true,
+    "workbench.colorTheme": "Default Dark Modern",
+    "redhat.telemetry.enabled": false,
+    "git.autoRepositoryDetection": false
+}
