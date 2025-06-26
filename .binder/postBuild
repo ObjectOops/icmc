@@ -2,3 +2,5 @@
 
 code-server --install-extension ms-python.python
 code-server --install-extension redhat.java
+code-server --install-extension vscjava.vscode-java-debug
+code-server --install-extension typefox.open-collaboration-tools
