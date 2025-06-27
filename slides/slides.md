@@ -1,6 +1,7 @@
 ---
 theme: dracula
 addons:
+  - tldraw
   - python-runner
 python:
   installs: ["cowsay"]
@@ -21,7 +22,6 @@ favicon: ./media/favicon.png
 seoMeta:
   ogTitle: ICMC Summer Coding
   ogDescription: Enhanced slides presentation.
-class: text-center
 transition: slide-left
 mdc: true
 ---
@@ -46,6 +46,15 @@ Presentation slides for developers
 <!--
 The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
 -->
+
+---
+
+```py {monaco-run} {autorun:false}
+print("Hi!")
+```
+
+<tldraw class="w-200 h-80" doc="tldraw/doc-Rmqc29TqPIUdEkAYg8c3_.json"></tldraw>
+
 
 ---
 transition: fade-out
