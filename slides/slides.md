@@ -2,6 +2,7 @@
 theme: dracula
 addons:
   - tldraw
+  - java-runner
   - python-runner
 python:
   installs: ["cowsay"]
@@ -18,7 +19,7 @@ browserExporter: dev
 download: false
 lineNumbers: true
 record: true
-favicon: ./media/favicon.png
+favicon: media/favicon.png
 seoMeta:
   ogTitle: ICMC Summer Coding
   ogDescription: Enhanced slides presentation.
@@ -48,6 +49,17 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
+
+```java {monaco-run} {autorun:false}
+package demo;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("\033[96mHello, world!\033[0m");
+    }
+}
+```
+
 
 ```py {monaco-run} {autorun:false}
 print("Hi!")
