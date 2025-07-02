@@ -1,16 +1,16 @@
 ---
 theme: dracula
-addons:
-  - tldraw
-  - java-runner
-  - python-runner
+# addons:
+  # - tldraw
+  # - java-runner
+  # - python-runner
 python:
-  installs: ["cowsay"]
+  installs: [ "cowsay" ]
 title: ICMC Summer Coding
 info: |
   ## ICMC Summer Coding
   Enhanced slides presentation.
-  
+
   [Iowa City Math Circle](https://iowacitymathcircle.org/)  
   [Source Code](https://github.com/ObjectOops/icmc/)
 author: Alex Yao
@@ -25,31 +25,23 @@ seoMeta:
   ogDescription: Enhanced slides presentation.
 transition: slide-left
 mdc: true
+date: 2025-07-28
+timezone: -05:00
+
+src: pages/title.md
 ---
 
-# Welcome to Slidev
+---
+src: pages/toc.md
+---
 
-Presentation slides for developers
-
-<div @click="$slidev.nav.next" class="mt-12 py-1" hover:bg="white op-10">
-  Press Space for next page <carbon:arrow-right />
-</div>
-
-<div class="abs-br m-6 text-xl">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
-    <carbon:logo-github />
-  </a>
-</div>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
+---
+src: pages/days/day01.md
+---
 
 ---
 
+````
 ```java {monaco-run} {autorun:false}
 package demo;
 
@@ -59,13 +51,16 @@ public class Main {
     }
 }
 ```
+````
 
+````
 
-```py {monaco-run} {autorun:false}
+```python {monaco-run} {autorun:false}
 print("Hi!")
 ```
+````
 
-<tldraw class="w-200 h-80" doc="tldraw/doc-Rmqc29TqPIUdEkAYg8c3_.json"></tldraw>
+<!-- <tldraw class="w-200 h-80" doc="tldraw/doc-Rmqc29TqPIUdEkAYg8c3_.json"></tldraw> -->
 
 
 ---
@@ -575,7 +570,7 @@ Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML D
 ---
 foo: bar
 dragPos:
-  square: 691,32,167,_,-16
+  square: 0,-96,0,0
 ---
 
 # Draggable Elements
