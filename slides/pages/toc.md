@@ -5,7 +5,7 @@ hideInToc: true
 
 # Table of Contents
 
-Today is: **<Date />**  
+Today is: <strong><Date /></strong> <RenderWhen context="print">(at time of export)</RenderWhen>
 
 <AutoFitText min="0"><Toc columns=5 /></AutoFitText>
 
