@@ -95,11 +95,11 @@ Helpful cheatsheets to reference:
 <div>
 
 - When programming outside of class, here are some other options:
-    1. Install an editor + Java and/or Python on a non-Chromebook device.<br>
-    <span text-sm>You can ask us for guidance.</span>
-    2. [Replit](https://replit.com/)
-    3. [JavaFiddle](https://javafiddle.leaningtech.com/) (Java)
-    4. [JupyterLite](https://jupyterlite.rtfd.io/en/stable/try/lab) (Python)
+  1. Install an editor + Java and/or Python on a non-Chromebook device.<br>
+  <span text-sm>You can ask us for guidance.</span>
+  2. [Replit](https://replit.com/)
+  3. [JavaFiddle](https://javafiddle.leaningtech.com/) (Java)
+  4. [JupyterLite](https://jupyterlite.rtfd.io/en/stable/try/lab) (Python)
 
 </div>
 
@@ -164,5 +164,69 @@ Tip: For Python you just need to use the command
 ---
 
 ## Break
+
+Have a break!
+
+<RandomPicture />
+
+---
+layout: two-cols-header
+---
+
+## About Java and Python
+
+### Java
+
+::left::
+
+<v-clicks depth=2>
+
+- Java 1.0 was released in 1996
+  - Not that old, still very popular
+  - Originally designed for TV
+  - Versions: 1.0, 1.1, ..., 1.4, <v-click hide at="5">?</v-click><v-click at="5">5.0, 6, 7, ...</v-click>
+  - <span text-sm>Versions you should care about (LTS):</span> 8, 11, 17, 21
+  - <span v-mark.underline.purple="6" border>**Java <logos-java /> and JavaScript <logos-javascript /> are different!**</span>
+
+</v-clicks>
+<v-click>
+
+![Minecraft Java Edition](https://www.minecraft.net/content/dam/minecraftnet/archive/4899721d4702ec8e8d548201fb6da050-pre_1122_title.png)
+
+</v-click>
+
+::right::
+
+<v-click>
+
+#### FIRST Robotics
+
+There are many high school robotics teams around Iowa City that use **Java**!  
+*Consider joining one!*
+
+**FTC** Teams:
+- West High: Trobotix 8696
+- City High: Raw Bacon 8743
+- Liberty High: ThunderBots 22064
+
+**FRC** Team:  
+- Iowa City: Children of the Corn 167
+
+</v-click>
+
+---
+zoom: 0.7
+---
+
+|  |  |  |
+| :---: | :---: | :---: |
+| <img width=250 alt="CENTERSTAGE" src="https://8696-trobotix.github.io/images/CENTERSTAGE/CenterstageImg.jpg"> | <img width=250 alt="Pumpkin" src="https://8696-trobotix.github.io/images/CENTERSTAGE/Trobotix2.png"> | <img width=250 alt="167" src="https://static.wixstatic.com/media/5fceb1_90f24f615f1842ad8683642600f7eb66~mv2.jpg/v1/fill/w_756,h_646,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2024.jpg"> |
+
+<SlidevVideo controls>
+  <source src="./robot.mp4" type="video/mp4" />
+  <p>Your browser does not support this video.</p>
+</SlidevVideo>
+
+---
 
 
