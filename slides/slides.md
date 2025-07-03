@@ -1,7 +1,8 @@
 ---
 theme: dracula
 addons:
-  - tldraw
+  - rabbit
+  # - tldraw
   # - java-runner
   # - python-runner
 python:
