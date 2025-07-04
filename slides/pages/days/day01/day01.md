@@ -432,6 +432,8 @@ boolean[] enemyTeam = new boolean [4];
 
 **type**, **name**, **assignment operator**, **size**, **initializer list**
 
+<logos-java />
+
 ---
 
 ## Basic I/O
@@ -534,6 +536,6 @@ int result = a / b;
 
 ## Worksheet
 
-[Click here to access the worksheet.](../../../worksheets/worksheet01/worksheet01.pdf)
+[Click here to access the worksheet.](worksheets/worksheet01/worksheet01.pdf)
 
-[Click here to access the answer key.](../../../worksheets/worksheet01/answers01.pdf)
+[Click here to access the answer key.](worksheets/worksheet01/answers01.pdf)
