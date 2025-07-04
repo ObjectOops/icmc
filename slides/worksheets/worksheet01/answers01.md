@@ -1,5 +1,10 @@
 ---
-src: ../headmatter.md
+download: true
+lineNumbers: true
+colorSchema: light
+aspectRatio: 1/1.294
+drawings:
+  persist: true
 ---
 
 ## <div text-center>Answers 1</div><br>
@@ -7,10 +12,14 @@ src: ../headmatter.md
 1. What differences have you noticed between Java and Python so far?  
 Use your own words. Feel free to use the internet to search.
 
+<span text-sm>
+
 Possible answers:
 - Java tends to be more wordy than Python.
 - Java is a "compiled language", Python is an "interpreted language".
 - Both Java and Python have modern-day uses.
+
+</span>
 
 2. In Java, write a program that asks for the user's name, then echo their name back.  
 
@@ -39,14 +48,12 @@ print("Your name is:", name)
 
 4. Identify the error in the following program and how to fix it.
 
-The variable `pizzasCount` is of type `String`, but is being treated as a type `int` in the program.  
-Replace this line
+The variable `pizzasCount` is of type `String`, but is being treated as a type `int` in the program.
 ```java
-String pizzasCount = scan.nextLine();
+String pizzasCount = scan.nextLine(); // Incorrect
 ```
-with this
 ```java
-int pizzasCount = scan.nextInt();
+int pizzasCount = scan.nextInt(); // Correct
 ```
 
 5. Identify the three problems in the following line of <logos-java /> code:
@@ -54,10 +61,16 @@ int pizzasCount = scan.nextInt();
 ```
 string thisIsAString! = "hi"
 ```
+
+<span text-sm>
+
 1. `string` should be capitalized <carbon-arrow-right /> `String`
 2. The variable name `thisIsAString!` is invalid because it ends with `!`.
 3. There is a missing semicolon after `"hi"`.
 Corrected:
+
+</span>
+
 ```
 String thisIsAString = "hi";
 ```

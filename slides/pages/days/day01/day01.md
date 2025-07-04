@@ -534,6 +534,6 @@ int result = a / b;
 
 ## Worksheet
 
-[Click here to access the worksheet.]()
+[Click here to access the worksheet.](../../../worksheets/worksheet01/worksheet01.pdf)
 
-<iframe src="unavailable" />
+[Click here to access the answer key.](../../../worksheets/worksheet01/answers01.pdf)

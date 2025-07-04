@@ -1,5 +1,10 @@
 ---
-src: ../headmatter.md
+download: true
+lineNumbers: true
+colorSchema: light
+aspectRatio: 1/1.294
+drawings:
+  persist: true
 ---
 
 ## <div text-center>Worksheet 1</div><br>
