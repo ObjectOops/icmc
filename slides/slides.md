@@ -3,8 +3,8 @@ theme: dracula
 addons:
   - rabbit
   # - tldraw
-  # - java-runner
-  # - python-runner
+  - java-runner
+  - python-runner
 python:
   installs: [ "cowsay" ]
 title: ICMC Summer Coding

@@ -50,7 +50,7 @@ Helpful cheatsheets to reference:
 
 | <DateTitle offset=0 /> | <DateTitle offset=1 /> | <DateTitle offset=2 /> | <DateTitle offset=3 /> | <DateTitle offset=4 /> |
 | :---: | :---: | :---: | :---: | :---: |
-| Running Programs | Variables, Datatypes, Functions | Intro to Classes, Control Flow | Data Structures, ADTs, Polymorphism | Call Stacks, Recusion |
+| Variables, Data Types | Using Data Types, Functions | Intro to Classes, Control Flow | Data Structures, ADTs, Polymorphism | Call Stacks, Recusion |
 
 ### Week 2 - Projects - <DateTitle offset=7 /> to <DateTitle offset=11 />
 
@@ -64,7 +64,7 @@ Helpful cheatsheets to reference:
 
 - Worksheets will be frequently assigned, but <span v-mark.underline.pink="+1">are not graded</span>.
 - You may check your answers against the answer keys.
-- <span v-mark.unerline.pink="+1">Both will be posted on these slides.</span>
+- <span v-mark.underline.pink="+1">Both will be posted on these slides.</span>
 
 </v-click>
 
@@ -79,7 +79,7 @@ Helpful cheatsheets to reference:
 - Click on the button below to open up a **Binder**.
 
 <AutoFitText min=0 max=1>
-<span v-mark.circle.pink="0">
+<span v-mark.circle.pink="1">
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ObjectOops/icmc/HEAD?urlpath=vscode)
 
@@ -175,7 +175,7 @@ layout: two-cols-header
 
 ## About Java and Python
 
-### Java
+### Java <logos-java />
 
 ::left::
 
@@ -183,10 +183,10 @@ layout: two-cols-header
 
 - Java 1.0 was released in 1996
   - Not that old, still very popular
-  - Originally designed for TV
-  - Versions: 1.0, 1.1, ..., 1.4, <v-click hide at="5">?</v-click><v-click at="5">5.0, 6, 7, ...</v-click>
-  - <span text-sm>Versions you should care about (LTS):</span> 8, 11, 17, 21
-  - <span v-mark.underline.purple="6" border>**Java <logos-java /> and JavaScript <logos-javascript /> are different!**</span>
+- Originally designed for TV
+- Versions: 1.0, 1.1, ..., 1.4, <v-click hide at="5">?</v-click><v-click at="5">5.0, 6, 7, ...</v-click>
+- <span text-sm>Versions you should care about (LTS):</span> 8, 11, 17, 21
+- <span v-mark.underline.purple="6" border>**Java <logos-java /> and JavaScript <logos-javascript /> are different!**</span>
 
 </v-clicks>
 <v-click>
@@ -226,6 +226,203 @@ zoom: 0.7
   <source src="./robot.mp4" type="video/mp4" />
   <p>Your browser does not support this video.</p>
 </SlidevVideo>
+
+---
+layout: two-cols
+---
+
+### Python <logos-python />
+
+<v-clicks>
+
+- Python 0.9.0 was released in 1991
+- Two variants: Python 2 & Python 3
+  - Don't use 2, use 3
+- As of writing this slide, the latest version is **3**.13.5
+- We will mainly be using Java (it's more straight forward)
+  - Python is handy for some things
+
+</v-clicks>
+
+Animations made with Python! <carbon-arrow-right />
+
+::right::
+
+<SlidevVideo autoplay loop controls>
+  <source src="https://www.manim.community/examples/ContinuousMotion.webm" type="video/webm" />
+  <p>Your browser does not support this video.</p>
+</SlidevVideo>
+
+<SlidevVideo autoplay loop controls>
+  <source src="https://www.manim.community/examples/OpeningManim.webm" type="video/webm" />
+  <p>Your browser does not support this video.</p>
+</SlidevVideo>
+
+---
+
+## Explanation
+
+<logos-java />
+
+```java {all|1|3,4,6,7|4,6|5|9-13|all}
+package src.workbench; // Main.java is in a folder called workbench, which is in a folder called src.
+
+public class Main { // You can think of the Main class as the command center of the program.
+    public static void main(String[] args) { // The main function is where your code starts executing.
+        System.out.println("Hello, world!"); // Outputs: Hello, world!
+    }
+}
+
+// This is a comment. It will be ignored by the program.
+/*
+This comment
+can be on multiple lines.
+*/
+```
+
+<logos-python />
+
+```py {none|1,2|4-8|all}
+print("Hello, world!") # In Python, any file can run on its own.
+# Python starts running immediately from line 1.
+
+# This is a comment.
+"""
+This comment
+can be on multiple lines.
+"""
+```
+
+---
+zoom: 0.9
+---
+
+## Keyboard Map
+
+<span text-sm>Some keys you might rarely use.</span>
+
+![Dell Chromebook Keyboard](https://m.media-amazon.com/images/I/61hDXryu+LL._UF894,1000_QL80_.jpg)
+
+<div font-mono text-3xl text-center>! @ # % ^ & * () _ {} [] / \ |</div>
+
+---
+
+## Variables
+
+<v-clicks>
+
+- A variable represents a piece of data
+- Every piece of data has a **type**
+  - The most basic types are called **primitive types**
+
+| *Groups* | Integers | Floating-Point | Boolean | Characters |
+| :--- | :--- | :--- | :--- | :--- |
+| *Types* | `byte`, `short`, <span v-mark.circle.pink="2">`int`</span>, `long` | `float`, <span v-mark.circle.pink="2">`double`</span> | `boolean` | `char` |
+| *Examples* | 0, -1, 32 | 3.14, -100.0, 0.0 | `true` or `false` | a, b, c, *, / |
+
+<span text-sm>Visit this website to learn more: [docs.oracle.com](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)</span>
+
+- Every variable has a name, names follow specific rules
+  - Example valid names: `num`, `myNum`, `NUM`, `_num_`, `num1`
+  - Example invalid names: `☹️`, `%num`, `num%`, `1num`, `my-num`
+
+</v-clicks>
+
+<!-- Talk about what each type means. -->
+
+---
+
+<logos-java />
+
+```java {monaco-run} {autorun:false}
+public class Main {
+    public static void main(String[] args) {
+        
+        int exampleVariable = 5;
+        
+        System.out.println("Value of exampleVariable: " + exampleVariable);
+    }
+}
+```
+
+<logos-python />
+
+```python {monaco-run} {autorun:false}
+example_variable = 5 # Notice that Python automatically infers the type of the variable.
+
+print("Value of exampleVariable:", example_variable)
+```
+
+<!-- 
+Demo each type.
+Discuss the pattern behind each of these types (small data).
+Note about the assignment operator.
+-->
+
+---
+
+- More complex data requires more complex types
+  - These are called **reference types**
+- Two commonly used **reference types** are *strings* and *arrays*
+
+<v-click>
+
+<logos-java />
+
+```java {monaco-run} {autorun:false}
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        // `String` must be capitalized! Value inside "".
+        String videoGame = "Minecraft: Java Edition";
+        int[] ratings = {1, 3, 2, 4, 5};
+        // int[] ratings = new int [10];
+        
+        System.out.println("Video Game: " + videoGame + " Ratings: " + Arrays.toString(ratings));
+    }
+}
+```
+
+<logos-python />
+
+```python {monaco-run} {autorun:false}
+name = "Alice"
+friends = ["Bob", "Charlie", "Dennis"]
+print("Name:", name, "Friends:", friends)
+```
+
+</v-click>
+
+---
+
+<Transform scale=1.5>
+
+```java
+double pi = 3.14159;
+double copyPi = pi;
+```
+
+</Transform>
+
+<br>
+
+**type**, **name**, **assignment operator**, **variable** or **literal value**
+
+<Transform scale=1.5>
+
+```java
+char someCharacter = 'A'; // Requires character to be in ''.
+boolean alive = true;
+boolean[] homeTeam = {alive, true, false, false};
+boolean[] enemyTeam = new boolean [4];
+```
+
+</Transform>
+
+<br><br>
+
+**type**, **name**, **assignment operator**, **size**, **initializer list**
 
 ---
 

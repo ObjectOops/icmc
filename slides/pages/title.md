@@ -2,7 +2,7 @@
 transition: slide-down
 hideInToc: true
 ---
-
+  
 # ICMC Summer Coding
 
 <div @click="$slidev.nav.next">
