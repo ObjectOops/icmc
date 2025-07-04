@@ -1,13 +1,14 @@
 ---
 theme: dracula
 addons:
-  - rabbit
+  # - rabbit
   # - tldraw
   - java-runner
   - python-runner
 python:
   installs: [ "cowsay" ]
 title: ICMC Summer Coding
+titleTemplate: '%s'
 info: |
   ## ICMC Summer Coding
   Enhanced slides presentation.
@@ -19,6 +20,7 @@ presenter: true
 browserExporter: dev
 download: false
 lineNumbers: true
+remoteAssets: build
 record: true
 favicon: media/favicon.png
 seoMeta:

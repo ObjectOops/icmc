@@ -1,0 +1,74 @@
+---
+src: ../headmatter.md
+---
+
+## <div text-center>Answers 1</div><br>
+
+1. What differences have you noticed between Java and Python so far?  
+Use your own words. Feel free to use the internet to search.
+
+Possible answers:
+- Java tends to be more wordy than Python.
+- Java is a "compiled language", Python is an "interpreted language".
+- Both Java and Python have modern-day uses.
+
+2. In Java, write a program that asks for the user's name, then echo their name back.  
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Enter your name: ");
+        String name = scan.nextLine();
+        System.out.println("Your name is: " + name);
+        
+        scan.close();
+    }
+}
+```
+
+3. Rewrite the program described above in Python.
+
+```py
+name = input("Enter your name: ")
+print("Your name is:", name)
+```
+
+4. Identify the error in the following program and how to fix it.
+
+The variable `pizzasCount` is of type `String`, but is being treated as a type `int` in the program.  
+Replace this line
+```java
+String pizzasCount = scan.nextLine();
+```
+with this
+```java
+int pizzasCount = scan.nextInt();
+```
+
+5. Identify the three problems in the following line of <logos-java /> code:
+
+```
+string thisIsAString! = "hi"
+```
+1. `string` should be capitalized <carbon-arrow-right /> `String`
+2. The variable name `thisIsAString!` is invalid because it ends with `!`.
+3. There is a missing semicolon after `"hi"`.
+Corrected:
+```
+String thisIsAString = "hi";
+```
+
+6. Identify why the following program won't run.
+
+Notice that the main function is called "notmain".
+```java
+public static void notmain(String[] args) { ...
+```
+It should actually be called "main".
+```java
+public static void main(String[] args) { ...
+```

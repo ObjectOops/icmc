@@ -7,7 +7,7 @@
 - Hello World
 - *Break*
 - About Java and Python
-- Variables, built-in functions, basic I/O
+- Variables and basic I/O
 - Common Errors and Debugging
 - *Worksheet*
 
@@ -20,6 +20,8 @@
 Message us on Discord or send an email to the following addresses:
 - <code><Obfuscate ob="aW93YWNpdHltYXRoY2lyY2xlQGdtYWlsLmNvbQo=" /></code>
 - <code><Obfuscate ob="YWxleHlhbzJAaWxsaW5vaXMuZWR1Cg==" /></code>
+
+<!-- We'll be using two programming languages. Transitioning from Python to Java, but still including Python. -->
 
 ---
 layout: two-cols-header
@@ -50,7 +52,7 @@ Helpful cheatsheets to reference:
 
 | <DateTitle offset=0 /> | <DateTitle offset=1 /> | <DateTitle offset=2 /> | <DateTitle offset=3 /> | <DateTitle offset=4 /> |
 | :---: | :---: | :---: | :---: | :---: |
-| Variables, Data Types | Using Data Types, Functions | Intro to Classes, Control Flow | Data Structures, ADTs, Polymorphism | Call Stacks, Recusion |
+| Variables, Data Types, I/O | Using Data Types, Functions | Intro to Classes, Control Flow | Data Structures, ADTs, Polymorphism | Call Stacks, Recusion |
 
 ### Week 2 - Projects - <DateTitle offset=7 /> to <DateTitle offset=11 />
 
@@ -105,7 +107,7 @@ Helpful cheatsheets to reference:
 
 </v-clicks>
 
-<!-- Binder, JavaFiddle, and JupyterLite don't save your files sicne they don't require an account. -->
+<!-- Binder, JavaFiddle, and JupyterLite don't save your files since they don't require an account. -->
 
 ---
 layout: two-cols-header
@@ -113,7 +115,7 @@ layout: two-cols-header
 
 ### Using Binder
 
-> <span text-sm>Tour shown during in-person session.</span>
+> <span text-sm>Instructor Guided</span>
 
 ::left::
 
@@ -293,17 +295,19 @@ can be on multiple lines.
 """
 ```
 
+<!-- Note that the double quotes for strings are necessary, but won't be printed! -->
+
 ---
 zoom: 0.9
 ---
 
 ## Keyboard Map
 
-<span text-sm>Some keys you might rarely use.</span>
+<span text-sm>Some keys you might have never used before.</span>
 
 ![Dell Chromebook Keyboard](https://m.media-amazon.com/images/I/61hDXryu+LL._UF894,1000_QL80_.jpg)
 
-<div font-mono text-3xl text-center>! @ # % ^ & * () _ {} [] / \ |</div>
+<div font-mono text-3xl text-center>! @ # % ^ & * () _ {} [] ; / \ |</div>
 
 ---
 
@@ -322,9 +326,14 @@ zoom: 0.9
 
 <span text-sm>Visit this website to learn more: [docs.oracle.com](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)</span>
 
+<Transform scale=0.9>
+
 - Every variable has a name, names follow specific rules
-  - Example valid names: `num`, `myNum`, `NUM`, `_num_`, `num1`
-  - Example invalid names: `☹️`, `%num`, `num%`, `1num`, `my-num`
+  - Example valid names: `num`, `myNum`, `NUM`, `_num_`, `num1`  
+  <span text-sm>(`_` is the only special character that can be used)</span>
+  - Example invalid names: `my num`, `☹️`, `num`, `%num%`, `1num`, `my-num`
+
+</Transform>
 
 </v-clicks>
 
@@ -378,7 +387,6 @@ public class Main {
         String videoGame = "Minecraft: Java Edition";
         int[] ratings = {1, 3, 2, 4, 5};
         // int[] ratings = new int [10];
-        
         System.out.println("Video Game: " + videoGame + " Ratings: " + Arrays.toString(ratings));
     }
 }
@@ -426,4 +434,106 @@ boolean[] enemyTeam = new boolean [4];
 
 ---
 
+## Basic I/O
 
+- I/O means **I**nput / **O**utput
+- Simplification:
+  - By default, programs use the *terminal* to output
+  - Also use the terminal to input text
+
+<logos-java />
+
+```java {all|1|5|7-9|12|all}
+import java.util.Scanner; // Required to use the scanner.
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(Systen.in); // Initialize a scanner.
+        
+        int num = scan.nextInt();        // `nextInt` gets an integer.
+        double num2 = scan.nextDouble(); // `nextDouble` gets a floating-point.
+        String s = scan.nextLine();      // `nextLine` gets a string.
+        
+        System.out.println("Values: " + num + " " + num2 + " " + s);
+        scan.close() // Remember to close the scanner.
+    }
+}
+```
+
+<!--
+These examples need to be run in an external environment.
+Use to illustrate errors (errors covered next).
+
+Python example on next slide.
+-->
+
+---
+
+<logos-python />
+
+```py
+num = int(input("Enter a number: "))          # Get an integer.
+num2 = float(input("Enter another number: ")) # Get a floating-point.
+s = input("Enter a string: ")                 # Get a string.
+```
+
+<!--
+These examples need to be run in an external environment.
+Use to illustrate errors (errors covered next).
+-->
+
+---
+
+## Errors
+
+<v-clicks>
+
+- You will encounter many errors while programming
+  - **Compile-time errors**: occur before you run the program
+  - **Run-time errors**: occur when the program is running
+
+Find the error:
+
+<logos-java />
+
+````md magic-move
+```java
+System.out.println("Hello, world!"
+```
+```java
+System.out.println("Hello, world!");
+```
+````
+
+<span text-sm>Syntax Error <carbon-arrow-up /></span>
+
+````md magic-move
+```java
+int number = "123";
+```
+```java
+int number = 123;
+```
+````
+
+<span text-sm>Type Error <carbon-arrow-up /></span>
+
+```java
+int a = 5;
+int b = 0;
+int result = a / b;
+```
+
+<span text-sm>Runtime Error: Divide by Zero <carbon-arrow-up /></span>
+
+</v-clicks>
+
+<!-- Discuss how to diagnose errors in the terminal output in external environment. -->
+
+---
+
+## Worksheet
+
+[Click here to access the worksheet.]()
+
+<iframe src="unavailable" />
