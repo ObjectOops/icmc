@@ -3,11 +3,11 @@
 - Introductions
 - Resources
 - Schedule
-- Coding set up
+- Coding Setup
 - Hello World
 - *Break*
 - About Java and Python
-- Variables and basic I/O
+- Variables and Basic I/O
 - Common Errors and Debugging
 - *Worksheet*
 
@@ -52,7 +52,7 @@ Helpful cheatsheets to reference:
 
 | <DateTitle offset=0 /> | <DateTitle offset=1 /> | <DateTitle offset=2 /> | <DateTitle offset=3 /> | <DateTitle offset=4 /> |
 | :---: | :---: | :---: | :---: | :---: |
-| Variables, Data Types, I/O | Using Data Types, Functions | Intro to Classes, Control Flow | Data Structures, ADTs, Polymorphism | Call Stacks, Recusion |
+| Variables, Data Types, I/O | Using Data Types and Variables | Arrays, Functions, Intro to Classes, Control Flow | Data Structures, ADTs, Polymorphism | Call Stacks, Recusion |
 
 ### Week 2 - Projects - <DateTitle offset=7 /> to <DateTitle offset=11 />
 
@@ -261,8 +261,20 @@ Animations made with Python! <carbon-arrow-right />
 </SlidevVideo>
 
 ---
+layout: two-cols-header
+---
 
 ## Explanation
+
+::left::
+
+![Java compilation to JVM steps.](https://miro.medium.com/v2/resize:fit:1400/0*4NnceIUku3NgtfDs)
+
+::right::
+
+![Python interpreter steps.](https://miro.medium.com/v2/resize:fit:1400/1*1athPfdP9St4mkB_hElM6g.png)
+
+---
 
 <logos-java />
 

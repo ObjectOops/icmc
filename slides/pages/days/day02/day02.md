@@ -7,12 +7,9 @@
 - Rounding Errors
 - Characters, ASCII
 - *Break*
-- Using Strings and Arrays
-- Operators and Casting
 - Using Debuggers
 - Understanding the scanner buffer
-- Defining Basic Functions
-- Class Exercises
+- Operators and Casting
 - *Worksheet*
 
 ---
@@ -353,6 +350,15 @@ Exercise: ASCII values for...
 Which character corresponds with the value 32?  
 <v-click><carbon-right-arrow /> A space!</v-click>
 
+```python {monaco-run} {autorun:false}
+# Convert a character into its ASCII code.
+ascii_code = ord('J')
+
+# Convert an ASCII code into its character.
+c = chr(80)
+print(c)
+```
+
 </v-clicks>
 
 ---
@@ -365,4 +371,170 @@ Have a break!
 
 ---
 
+## Using Debuggers
 
+> <span text-sm>Instructor Guided</span>
+
+![Debugging](./debugging.png)
+
+<!-- Instructor should perform interactive guide in external environment. -->
+
+---
+
+## The Scanner Buffer
+
+<v-clicks>
+
+What does the following code output?
+
+<logos-java /> <span text-sm>(only applies to Java)</span>
+
+```
+Scanner scan = new Scanner(System.in);
+
+int num = scan.nextInt();
+String someString = scan.nextLine();
+
+System.out.println("num: " + num + ", someString: " + someString);
+```
+
+Sample Output:
+`num: 5, someString: `
+
+The variable `someString` is empty because of **buffering**.
+
+<v-clicks depth=2>
+
+- What character is at ASCII code 10?
+  - The `LF` character is called the **l**ine **f**eed or **newline** character
+  - It is an *invisible character*, so the table labels it as "LF".
+  - In this case, it represents that you have hit the <span v-mark.underline.pink>enter key</span>
+- A **buffer** stores characters before they can be used by the program
+  - When we entered 5 in the example above, the buffer looked like this:
+  `5<LF>`
+  - After `scan.nextInt()`, the buffer looked like this:
+  `<LF>` <span text-sm>(the character '5' was *consumed*)</span>
+  - When we entered a string like "hello" afterwards, the buffer became:
+  `<LF>hello<LF>` <span text-sm>("hello<LF>" was inserted after the first "<LF>")</span>
+  - When calling `scan.nextLine()`, the <span v-mark.underline.pink>scanner gets characters until the first `<LF>`</span>
+  - Finally, the buffer looks like this:
+  `hello<LF>` <span text-sm>(only the first "<LF>" was consumed)</span>
+  And the value of `someString` is an empty String, because there were no characters before the first LF 
+
+</v-clicks>
+
+To fix this, add a `scan.nextLine()` after reading the integer:
+```java
+Scanner scan = new Scanner(System.in);
+
+int num = scan.nextInt();
+scan.nextLine(); // Add this.
+String someString = scan.nextLine();
+```
+
+</v-clicks>
+
+<!-- Demo the example code. Some modifications may be needed to run in external environment. -->
+
+---
+
+## Operators
+
+<v-clicks depth=2>
+
+- We have already seen the assignment operator (`=`) and the addition operator (`+`)
+- There are many other operators
+![Java Operators](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLtbd8L3heos2wMpz8qb6lnnPkCru1hdd-cg&s)
+  - We will gradually learn more about them
+  - For full descriptions, visit this site: [docs.oracle.com](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/opsummary.html)
+- The *order of operations* generally applies in programming the same way as in algebra
+  - Multiplication (`*`) has higher precedence over addition (`+`)
+  - Put your expressions inside parenthesis [`(1 + 2) * 3`] to given them higher precedence
+
+</v-clicks>
+<v-click>
+
+<logos-python /><span text-sm>(using Python here, but it also applies to Java)</span>
+
+```python {monaco-run} {autorun:false}
+num1 = 5
+num2 = 6
+num3 = 2 + num1 * num2
+print(num3)
+```
+
+</v-click>
+
+<!-- Try some operators in the demo. -->
+
+---
+
+## Casting
+
+<v-clicks>
+
+- To convert one data type to another data type, we can often use **casting**
+- <span v-mark.highlight.red="2">Casting is different between Java and Python</span>
+
+</v-clicks>
+<v-click>
+
+### Example - Java
+
+Put `(type)` (where `type` is a data type) before a variable to cast it to another type.
+
+```java {monaco-run} {autorun:false}
+public class Main {
+    public static void main(String[] args) {
+        double num = 3.14159;
+        // Print the original `num`, but also casted to an integer.
+        System.out.println("num: " + num + " " + (int)num);
+        
+        int num2 = (int)num;
+        // Casting to a String is a bit different:
+        String numString = Double.toString(num); // `Double` is uppercase!
+        String numString2 = Integer.toString(num2);
+        System.out.println("strings: " + numString + " " + numString2);
+        
+        // Casting from a String to other data types:
+        String numString3 = "123";
+        int num3 = String.valueOf(numString3);
+        System.out.println("num3: " + num3)
+    }
+}
+```
+
+</v-click>
+<v-click>
+
+### Example - Python
+
+The same examples above, but in Python.  
+Similar to Java, but casting takes the form `type(value)`.
+
+```python {monaco-run} {autorun:false}
+num = 3.14159
+# Print the original `num`, but also casted to an integer.
+print("num:", num, int(num))
+
+# Casting to a String is a bit different:
+num_string = str(num) # `str` is short for "string".
+print("string:", num_string)
+
+# Casting from a String to other data types:
+num_string_2 = "123"
+num2 = int(num_string_2)
+print("num2:", num2)
+```
+
+</v-click>
+
+<!-- They should recall that casting from strings to other types in Python is the same process as converting bases. -->
+
+---
+
+## Worksheet
+
+[Click here to access the worksheet.](worksheets/worksheet01/worksheet01.pdf)
+
+[Click here to access the answer key.](worksheets/worksheet01/answers01.pdf)
