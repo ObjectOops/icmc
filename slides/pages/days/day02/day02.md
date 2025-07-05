@@ -352,7 +352,7 @@ Which character corresponds with the value 32?
 
 ```python {monaco-run} {autorun:false}
 # Convert a character into its ASCII code.
-ascii_code = ord('J')
+ascii_code = ord('J') # The quotes '' are needed. 
 
 # Convert an ASCII code into its character.
 c = chr(80)
@@ -538,3 +538,5 @@ print("num2:", num2)
 [Click here to access the worksheet.](worksheets/worksheet01/worksheet01.pdf)
 
 [Click here to access the answer key.](worksheets/worksheet01/answers01.pdf)
+
+
