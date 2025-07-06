@@ -7,7 +7,7 @@ hideInToc: true
 
 Today is: <strong><Date /></strong> <RenderWhen context="print">(at time of export)</RenderWhen>
 
-<AutoFitText min="0"><Toc columns=5 /></AutoFitText>
+<Toc columns=5 maxDepth=1 />
 
 <!--
 The TOC has been hard-fixed to five columns.

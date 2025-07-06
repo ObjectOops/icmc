@@ -1,4 +1,11 @@
+---
+layout: two-cols
+transition: slide-left
+---
+
 # <DateTitle offset=0 />
+
+**Agenda**
 
 - Introductions
 - Resources
@@ -10,6 +17,10 @@
 - Variables and Basic I/O
 - Common Errors and Debugging
 - *Worksheet*
+
+::right::
+
+<Toc minDepth=2 mode="onlyCurrentTree" />
 
 ---
 
@@ -231,6 +242,7 @@ zoom: 0.7
 
 ---
 layout: two-cols
+hideInToc: true
 ---
 
 ### Python <logos-python />
@@ -246,7 +258,7 @@ layout: two-cols
 
 </v-clicks>
 
-Animations made with Python! <carbon-arrow-right />
+<v-click>Animations made with Python! <carbon-arrow-right /></v-click>
 
 ::right::
 
@@ -268,13 +280,33 @@ layout: two-cols-header
 
 ::left::
 
+<v-click>
+
+<logos-java />
+
+<Transform scale=0.64>
+
 ![Java compilation to JVM steps.](https://miro.medium.com/v2/resize:fit:1400/0*4NnceIUku3NgtfDs)
+
+</Transform>
+
+</v-click>
 
 ::right::
 
+<v-click>
+
+<logos-python />
+
 ![Python interpreter steps.](https://miro.medium.com/v2/resize:fit:1400/1*1athPfdP9St4mkB_hElM6g.png)
 
+</v-click>
+
 ---
+hideInToc: true
+---
+
+## Explanation - Cont.
 
 <logos-java />
 
@@ -297,8 +329,8 @@ can be on multiple lines.
 <logos-python />
 
 ```py {none|1,2|4-8|all}
-print("Hello, world!") # In Python, any file can run on its own.
 # Python starts running immediately from line 1.
+print("Hello, world!") # In Python, any file can run on its own.
 
 # This is a comment.
 """
@@ -343,7 +375,7 @@ zoom: 0.9
 - Every variable has a name, names follow specific rules
   - Example valid names: `num`, `myNum`, `NUM`, `_num_`, `num1`  
   <span text-sm>(`_` is the only special character that can be used)</span>
-  - Example invalid names: `my num`, `☹️`, `num`, `%num%`, `1num`, `my-num`
+  - Example invalid names: `int`, `my num`, `☹️`, `num`, `%num%`, `1num`, `my-num`
 
 </Transform>
 
