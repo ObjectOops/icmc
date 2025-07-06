@@ -446,9 +446,7 @@ Have a break!
 
 > <span text-sm>Instructor Guided</span>
 
-![Debugging](/days/day02/debugging.png)
-
-(1) Set a breakpoint (2) Start the debugger (3) Run each line one by one, or jump to other breakpoints (4) View how variables change over time
+<Excalidraw drawFilePath="/days/day02/debugging.excalidraw.json" darkMode="true" />
 
 <!-- Instructor should perform interactive guide in external environment. -->
 

@@ -121,56 +121,16 @@ Helpful cheatsheets to reference:
 <!-- Binder, JavaFiddle, and JupyterLite don't save your files since they don't require an account. -->
 
 ---
-layout: two-cols-header
----
 
 ### Using Binder
 
 > <span text-sm>Instructor Guided</span>
 
-::left::
+<Transform scale=1.3>
 
-<Transform scale=0.75>
-<v-clicks>
+<Excalidraw drawFilePath="/days/day01/using_binder.excalidraw.json" darkMode="true" />
 
-<span text-2xl>1. Click "Yes, I trust the authors"</span>
-![Binder 1](/days/day01/binder_1.png)
-
-<span text-2xl>2. Click "Never"</span>
-![Binder 2](/days/day01/binder_2.png)
-
-</v-clicks>
 </Transform>
-
-::right::
-
-<div text-sm>
-<v-click>
-
-Create a new terminal to run *commands*.
-
-![Binder 3](/days/day01/binder_3.png)
-
-</v-click>
-<v-click>
-
-**Compile** Command: `javac src/workbench/Main.java`  
-**Run** Command: `java src.workbench.Main`  
-You must always <span v-mark.underline.pink="4">**compile** before **running**</span>.
-
-</v-click>
-<v-click>
-
-Use the run button to **compile** and **run** in one step!
-
-</v-click>
-<v-click>
-
-Tip: For Python you just need to use the command  
-`python main.py`.
-
-</v-click>
-</div>
 
 <!-- Students should now run Hello World! -->
 
@@ -273,34 +233,10 @@ hideInToc: true
 </SlidevVideo>
 
 ---
-layout: two-cols-header
----
 
 ## Explanation
 
-::left::
-
-<v-click>
-
-<logos-java />
-
-<Transform scale=0.64>
-
-![Java compilation to JVM steps.](https://miro.medium.com/v2/resize:fit:1400/0*4NnceIUku3NgtfDs)
-
-</Transform>
-
-</v-click>
-
-::right::
-
-<v-click>
-
-<logos-python />
-
-![Python interpreter steps.](https://miro.medium.com/v2/resize:fit:1400/1*1athPfdP9St4mkB_hElM6g.png)
-
-</v-click>
+<Excalidraw drawFilePath="/days/day01/run_steps.excalidraw.json" darkMode="true" />
 
 ---
 hideInToc: true
@@ -342,16 +278,10 @@ can be on multiple lines.
 <!-- Note that the double quotes for strings are necessary, but won't be printed! -->
 
 ---
-zoom: 0.9
----
 
 ## Keyboard Map
 
-<span text-sm>Some keys you might have never used before.</span>
-
-![Dell Chromebook Keyboard](https://m.media-amazon.com/images/I/61hDXryu+LL._UF894,1000_QL80_.jpg)
-
-<div font-mono text-3xl text-center>! @ # % ^ & * () _ {} [] ; / \ |</div>
+<Excalidraw drawFilePath="/days/day01/keyboard_map.excalidraw.json" darkMode="true" />
 
 ---
 
@@ -448,35 +378,11 @@ print("Name:", name, "Friends:", friends)
 
 ---
 
-<Transform scale=1.5>
-
-```java
-double pi = 3.14159;
-double copyPi = pi;
-```
-
-</Transform>
-
-<br>
-
-**type**, **name**, **assignment operator**, **variable** or **literal value**
-
-<Transform scale=1.5>
-
-```java
-char someCharacter = 'A'; // Requires character to be in ''.
-boolean alive = true;
-boolean[] homeTeam = {alive, true, false, false};
-boolean[] enemyTeam = new boolean [4];
-```
-
-</Transform>
-
-<br><br>
-
-**type**, **name**, **assignment operator**, **size**, **initializer list**
+### Summary
 
 <logos-java />
+
+<Excalidraw drawFilePath="/days/day01/variables_summary.excalidraw.json" darkMode="true" />
 
 ---
 

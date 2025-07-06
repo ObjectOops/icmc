@@ -1,5 +1,10 @@
 {
     "files.eol": "\n",
     "slidev.dev-command": "npm exec -c 'slidev --bind 127.0.0.1  ${args}'",
+    "excalidraw.image": {
+        "exportScale": 1,
+        "exportWithBackground": false,
+        "exportWithDarkMode": true
+    },
     "excalidraw.theme": "dark"
 }
