@@ -24,15 +24,15 @@ transition: slide-left
 <Toc minDepth=2 maxDepth=3 mode="onlyCurrentTree" />
 
 ---
-src: ../day01/day01.md#16
+src: day01.md#16
 ---
 
 ---
-src: ../day01/day01.md#17
+src: day01.md#17
 ---
 
 ---
-src: ../day01/day01.md#18
+src: day01.md#18
 ---
 
 ---
