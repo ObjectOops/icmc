@@ -3,6 +3,7 @@ theme: dracula
 addons:
   # - rabbit
   # - tldraw
+  - excalidraw
   - java-runner
   - python-runner
 python:
@@ -41,11 +42,11 @@ src: pages/toc.md
 ---
 
 ---
-src: pages/days/day01/day01.md
+src: pages/days/day01.md
 ---
 
 ---
-src: pages/days/day02/day02.md
+src: pages/days/day02.md
 ---
 
 ---

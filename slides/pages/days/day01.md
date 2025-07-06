@@ -134,10 +134,10 @@ layout: two-cols-header
 <v-clicks>
 
 <span text-2xl>1. Click "Yes, I trust the authors"</span>
-![Binder 1](./binder_1.png)
+![Binder 1](/days/day01/binder_1.png)
 
 <span text-2xl>2. Click "Never"</span>
-![Binder 2](./binder_2.png)
+![Binder 2](/days/day01/binder_2.png)
 
 </v-clicks>
 </Transform>
@@ -149,7 +149,7 @@ layout: two-cols-header
 
 Create a new terminal to run *commands*.
 
-![Binder 3](./binder_3.png)
+![Binder 3](/days/day01/binder_3.png)
 
 </v-click>
 <v-click>
@@ -236,7 +236,7 @@ zoom: 0.7
 | <img width=250 alt="CENTERSTAGE" src="https://8696-trobotix.github.io/images/CENTERSTAGE/CenterstageImg.jpg"> | <img width=250 alt="Pumpkin" src="https://8696-trobotix.github.io/images/CENTERSTAGE/Trobotix2.png"> | <img width=250 alt="167" src="https://static.wixstatic.com/media/5fceb1_90f24f615f1842ad8683642600f7eb66~mv2.jpg/v1/fill/w_756,h_646,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2024.jpg"> |
 
 <SlidevVideo controls>
-  <source src="./robot.mp4" type="video/mp4" />
+  <source src="/days/day01/robot.mp4" type="video/mp4" />
   <p>Your browser does not support this video.</p>
 </SlidevVideo>
 

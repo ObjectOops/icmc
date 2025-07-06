@@ -12,6 +12,7 @@
     "@slidev/cli": "^51.8.2",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
+    "slidev-addon-excalidraw": "^1.0.4",
     "slidev-addon-java-runner": "^0.1.1",
     "slidev-addon-python-runner": "^0.1.3",
     "slidev-addon-rabbit": "^0.4.0",
