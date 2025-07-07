@@ -63,7 +63,7 @@ Helpful cheatsheets to reference:
 
 | <DateTitle offset=0 /> | <DateTitle offset=1 /> | <DateTitle offset=2 /> | <DateTitle offset=3 /> | <DateTitle offset=4 /> |
 | :---: | :---: | :---: | :---: | :---: |
-| Variables, Data Types, I/O | Using Data Types and Variables | Arrays, Functions, Intro to Classes, Control Flow | Data Structures, ADTs, Polymorphism | Call Stacks, Recusion |
+| Variables, Data Types, I/O | Using Data Types and Variables | Arrays, Strings, Functions, Intro to Classes, Control Flow | Data Structures, ADTs, Polymorphism | Call Stacks, Recusion |
 
 ### Week 2 - Projects - <DateTitle offset=7 /> to <DateTitle offset=11 />
 
@@ -128,7 +128,7 @@ Helpful cheatsheets to reference:
 
 <Transform scale=1.3>
 
-<Excalidraw drawFilePath="/days/day01/using_binder.excalidraw.json" darkMode="true" />
+<Excalidraw drawFilePath="/days/day01/using_binder.excalidraw.json" darkMode />
 
 </Transform>
 
@@ -236,7 +236,7 @@ hideInToc: true
 
 ## Explanation
 
-<Excalidraw drawFilePath="/days/day01/run_steps.excalidraw.json" darkMode="true" />
+<Excalidraw drawFilePath="/days/day01/run_steps.excalidraw.json" darkMode />
 
 ---
 hideInToc: true
@@ -281,7 +281,7 @@ can be on multiple lines.
 
 ## Keyboard Map
 
-<Excalidraw drawFilePath="/days/day01/keyboard_map.excalidraw.json" darkMode="true" />
+<Excalidraw drawFilePath="/days/day01/keyboard_map.excalidraw.json" darkMode />
 
 ---
 
@@ -360,13 +360,13 @@ public class Main {
         // `String` must be capitalized! Value inside "".
         String videoGame = "Minecraft: Java Edition";
         int[] ratings = {1, 3, 2, 4, 5};
-        // int[] ratings = new int [10];
+        // int[] ratings = new int[10];
         System.out.println("Video Game: " + videoGame + " Ratings: " + Arrays.toString(ratings));
     }
 }
 ```
 
-<logos-python />
+<logos-python /> <span text-sm>(Python actually calls this a *list*, which is similar to *arrays*.)</span>
 
 ```python {monaco-run} {autorun:false}
 name = "Alice"
@@ -376,13 +376,15 @@ print("Name:", name, "Friends:", friends)
 
 </v-click>
 
+<!-- Inform students that we will be learning more about arrays and strings in a later session. -->
+
 ---
 
 ### Summary
 
 <logos-java />
 
-<Excalidraw drawFilePath="/days/day01/variables_summary.excalidraw.json" darkMode="true" />
+<Excalidraw drawFilePath="/days/day01/variables_summary.excalidraw.json" darkMode />
 
 ---
 

@@ -5,7 +5,7 @@ transition: slide-left
 
 # <DateTitle offset=1 />
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ObjectOops/icmc/HEAD?urlpath=vscode)
+<StartupBadge />
 
 **Agenda**
 
@@ -446,7 +446,7 @@ Have a break!
 
 > <span text-sm>Instructor Guided</span>
 
-<Excalidraw drawFilePath="/days/day02/debugging.excalidraw.json" darkMode="true" />
+<Excalidraw drawFilePath="/days/day02/debugging.excalidraw.json" darkMode />
 
 <!-- Instructor should perform interactive guide in external environment. -->
 
@@ -585,6 +585,8 @@ print("num2:", num2)
 
 <!-- They should recall that casting from strings to other types in Python is the same process as converting bases. -->
 
+---
+hideInToc: true
 ---
 
 ### Example - Java <logos-java />

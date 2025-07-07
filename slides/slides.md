@@ -50,6 +50,10 @@ src: pages/days/day02.md
 ---
 
 ---
+src: pages/days/day03.md
+---
+
+---
 src: pages/unavailable.md
 ---
 
