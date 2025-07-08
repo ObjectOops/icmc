@@ -44,6 +44,7 @@ src: day01.md#18
 ```java
 String[] fruits = {"Apple", "Banana", "Cantaloupe"};
 String[] fiveEmptyStrings = new String[5];
+int[] fiveZeroes = new int[5];
 ```
 <logos-python /> <span text-sm>(Technically a **list**.)</span>
 ```py
@@ -554,4 +555,128 @@ cow()
 
 ---
 
+## Intro to Classes
 
+<v-clicks depth=2>
+
+- Let's say that we want to store information about multiple people
+- We can use arrays:
+```java
+String[] names  = {   "Alice",      "Bob", "Charlie"};
+int[]    ages   = {        20,         21,        25};
+String[] cities = {"Shanghai", "New York",  "London"};
+```
+- To get an individual person:
+```java
+String name = names[0]; // Alice
+int age = ages[0]; // 20
+String city = cities[0]; // Shanghai
+```
+- This is an inefficient way of storing and retrieving data!
+- **Classes** allow us to *abstract* our data
+  - A **class** is like a blueprint for how to construct something
+  - An **object** is like a thing made from a **class's** "blueprint"
+- A **class** has components called **members**
+  - There are multiple kinds of members
+  - **attributes** - variables contained within a class
+  - **methods** - functions which are a part of a class
+  - **constructors** - *special methods* which define how to create objects from a class
+    - When we create an *object* from a *class*, we call it *instantiation*
+  - **static members** - if an **attribute** or **method** is *static*, it means that the member is associated with the class, and not an object
+    - Useful for defining *constants* and extra functions
+- We will only be looking at classes in Java
+
+</v-clicks>
+
+---
+
+### Example
+
+```java {monaco-run} {autorun:false}
+public class Main {
+    public static void main(String[] args) {
+        // We can still use arrays to store multiple people, but here we only need one array.
+        Person[] people = {
+            // Use the `new` keyward when creating objects from the Person class.
+            new Person("Alice", 20, "Shanghai", "Aly"); // This a person object.
+            new Person("Bob", 21, "New York", "B"); // Another person object.
+            new Person("Charlie", 25, "London", "Chip"); // ...
+        }
+        
+        // Get a person.
+        Person person = people[0]; // `person` is an object instantiated from `Person`.
+        Person samePerson = people[0];
+        
+        person.sayHi();
+        samePerson.sayHi();
+        
+        // Both `person` and `samePerson` refer to the same object of `Person`.
+        // Changing one variabe's attributes will also be reflected by the other variable!
+        person.city = "Wonderland";
+        samePerson.sayHi();
+        // This is why they classes are "reference types".
+        
+        // We can access static attributes and static methods directly from a class without needing an object.
+        System.out.println(Person.NUMBER); // Access `NUMBER` directly from `Person`.
+        Person.someStaticMethod(); // Call `someStaticMethod` directly from `Person`.
+        
+        // Attempting to access private members will result in an error!
+        // String fail = person.nickname;
+        // person.sayNickname();
+    }
+}
+
+// The Person class.
+class Person {
+    // A static attribute.
+    public static final int NUMBER = 10;
+    
+    // Attributes:
+    public String name;
+    public int age;
+    public String city;
+    
+    // A private attribute.
+    private String nickname;
+    
+    // A constructor.
+    public Person(String name, int age, String city, String nick) {
+        // We use the `this` keyboard to distinguish between the `name` argument and the `name` attribute.
+        this.name = name;
+        this.age = age;
+        this.city = city;
+        // `this` is not required for the `nickname` attribute because the argument is called `nick`.
+        nickname = nick;
+    }
+    
+    // A method, just like a function.
+    public void sayHi() {
+        System.out.println("Hi, my name is " + name + ". I'm " + age + " years old and I live in " + city + ".");
+    }
+    
+    // A private method.
+    private void sayNickname() {
+        System.out.println("My nickname is " + nickname + ".");
+    }
+    
+    // A static method.
+    public void someStaticMethod() {
+        System.out.println("Did something.");
+    }
+}
+```
+
+<!-- 
+The instructor will be required to elaborate upon each of the comments.
+As with the main method, the main class makes for a good worksheet exercise.
+
+If time permits, use an external environment (it may be faster) to demonstrate getters and setters.
+-->
+
+---
+
+## Worksheet
+
+[Click here to access the worksheet.](worksheets/worksheet03/worksheet03.pdf)
+
+[Click here to access the answer key.](worksheets/worksheet03/answers03.pdf)

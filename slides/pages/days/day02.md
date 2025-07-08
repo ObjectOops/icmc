@@ -544,10 +544,22 @@ num2 = 6
 num3 = 2 + num1 * num2
 print(num3)
 ```
+```java {monaco-run} {autorun:false}
+public class Main {
+    public static void main(String[] args) {
+      String s = "Test";
+      int n = 32;
+      System.out.println(s + n);
+    }
+}
+```
 
 </v-click>
 
-<!-- Try some operators in the demo. -->
+<!-- 
+Try some operators in the Python demo. 
+Show that addition doesn't simply work between strings and other types, although it does in Java.
+-->
 
 ---
 

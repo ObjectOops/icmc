@@ -339,6 +339,7 @@ print("Value of exampleVariable:", example_variable)
 <!-- 
 Demo each type.
 Discuss the pattern behind each of these types (small data).
+Show that you cannot assign a literal of the incorrect type.
 Note about the assignment operator.
 -->
 
