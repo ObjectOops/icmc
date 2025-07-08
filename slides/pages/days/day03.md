@@ -14,7 +14,6 @@ transition: slide-left
 - *Break*
 - Defining Functions
 - Intro to Classes
-- Control Flow
 - *Worksheet*
 
 ::right::
@@ -236,6 +235,322 @@ str_len = len(s)
 Have a break!
 
 <RandomPicture />
+
+---
+
+## Functions / Methods
+
+<v-clicks depth=2>
+
+- A **function**, also called a **method**, is a block of code that can be reused in varying contexts
+  - This definition is unclear; let's see some examples
+- Say that we have a math function $f(x)=2^x*100$
+  - $f(0)=$<v-click>$1$</v-click>
+  - $f(1)=$<v-click>$2$</v-click>
+  - $f(5)=$<v-click>$32$</v-click>
+- If we have a complicated formula, we can simplify it with our function
+  - $2^5*100+2^1*100+2^0*100\Rightarrow f(5)+f(1)+f(0)=32+2+1=35$
+- We can do the same thing in languages like Java and Python
+- Functions have four parts:
+  - *return type*
+  - *name*
+  - *parameters*
+  - *definition*
+    - Might include: *return value* (if *return type* is not `void`)
+
+</v-clicks>
+
+<!-- It's okay if younger students haven't learned mathematical functions yet. -->
+
+---
+
+### Example 1 - Java <logos-java />
+
+Our goal: Ask the user for two names <span v-mark.underline.white>using the same prompt</span> and output them together.
+
+````md magic-move
+```java
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Enter name #1");
+        String name1 = scan.nextLine();
+        
+        System.out.println("Enter name #2");
+        String name2 = scan.nextLine();
+        
+        System.out.println(name1 + " and " + name2);
+        
+        scan.close();
+        
+        // This is too much typing!
+    }
+}
+```
+```java
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String prompt = "Enter name #";
+        
+        System.out.println(prompt + "1");
+        String name1 = scan.nextLine();
+        
+        System.out.println(prompt + "2");
+        String name2 = scan.nextLine();
+        
+        System.out.println(name1 + " and " + name2);
+        
+        scan.close();
+        
+        // We can change the prompt from one place instead of two.
+        // Better, but we can do more!
+    }
+}
+```
+```java
+public class Main {
+    
+    private Scanner scan = null; // This is a global variable.
+    
+    public static void main(String[] args) {
+        scan = new Scanner(System.in);
+        
+        String name1 = prompt(1);
+        String name2 = prompt(2);
+        
+        System.out.println(name1 + " and " + name2);
+        
+        scan.close();
+        
+        // We have turned the prompting process into a function!
+    }
+    
+    private String prompt(int num) {
+        System.out.println("Enter name #" + num);
+        String name = scan.nextLine();
+        return name;
+    }
+}
+```
+```java
+import java.util.Arrays;
+
+public class Main {
+    
+    private Scanner scan = null; // This is a global variable.
+    
+    public static void main(String[] args) {
+        scan = new Scanner(System.in);
+        
+        String[] manyNames = {prompt(1), prompt(2), prompt(3), prompt(4)};
+        
+        System.out.println(Arrays.toString(manyNames));
+        
+        scan.close();
+        
+        // We can use the same `prompt` many times!
+        // Less typing, more coding!
+    }
+    
+    private String prompt(int num) {
+        System.out.println("Enter name #" + num);
+        String name = scan.nextLine();
+        return name;
+    }
+}
+```
+````
+
+<!-- 
+Copy-paste first and final transition into external environment and run from there.
+Explain each part of function definition, including return value. 
+> Will learn more about access modifers later!
+> Arguments are 1, 2, 3, 4.
+Explain the global variable.
+
+Inform students that the main method is also a function, just a special one.
+We won't break it down since it makes for a good worksheet exercise.
+-->
+
+---
+
+### Example 2 - Java <logos-java />
+
+This example shows how to define a function with **multiple parameters** and **no return value**.  
+Goal: Calculate and output the *area* and *circumference* of two circles.  
+$$
+A(r)=\pi*r^2
+P(r)=2*\pi*r
+$$
+
+```java {monaco-run} {autorun:false}
+public class Main {
+    private final double pi = 3.14159; // Global variable.
+    
+    public static void main(String[] args) {
+        double radius1 = 3;
+        double radius2 = 9;
+        
+        double a1 = area(radius1);
+        double a2 = area(radius2);
+        
+        double c1 = circumference(radius1);
+        double c2 = circumference(radius2);
+        
+        outputCircleInfo(radius1, a1, c1);
+        outputCircleInfo(radius2, a2, c2);
+    }
+    
+    /*
+     * Return Type: double
+     * Name: area
+     * Parameters: double radius
+     */
+    private double area(double radius) {
+        return pi * radius * radius; // Function definition and return value.
+    }
+
+    /*
+     * Return Type: double
+     * Name: circumference
+     * Parameters: double radius
+     */
+    private double circumference(double radius) {
+        return 2 * pi * radius; // Function definition and return value.
+    }
+    
+    /*
+     * Return Type: void (nothing)
+     * Name: outputCircleInfo
+     * Parameters: double r, double a, double c
+     */
+    private void outputCircleInfo(double r, double a, double c) {
+        System.out.println("Circle Info:"); // Function definition.
+        System.out.println("Radius: " + r);
+        System.out.println("Area: " + a);
+        System.out.println("Circumference: " + c);
+        // No return value since function return type is `void`!
+    }
+}
+```
+
+<!-- Arguments start with the radii, then are passed down as the areas and circumferences. -->
+
+---
+
+### Examples - Python <logos-python />
+
+These are the same as the two prior examples, but written using Python.  
+<span v-mark.underline.pink>Python automatically infers the types for the *return type* and *parameters*.</span>
+
+#### Example 1
+
+```py
+def prompt(num):
+    return input(f"Enter name #{num}")
+
+names = [prompt(1), prompt(2), prompt(3), prompt(4)]
+
+print(names)
+```
+
+#### Example 2
+
+```py
+pi = 3.14159
+
+# All Python functions start with `def`.
+def area(radius):
+    return pi * radius * radius
+
+def circumference(radius):
+    return 2 * pi * radius
+
+def output_circle_info(r, a, c)
+    print("Circle Info:")
+    print(f"Radius: {r}")
+    print(f"Area: {a}")
+    print(f"Circumference: {c}")
+
+radius1 = 3
+radius2 = 9
+
+a1 = area(radius1)
+a2 = area(radius2)
+
+c1 = circumference(radius1)
+c2 = circumference(radius2)
+
+output_circle_info(radius1, a1, c1)
+output_circle_info(radius2, a2, c2)
+```
+
+<!-- First example needs to be run in an external environment. -->
+
+---
+
+### Global Variables
+
+<v-clicks>
+
+In the past few Java examples, we saw the use of **global variables** or "class-scope variables".
+
+```java
+private Scanner scan = null;
+```
+```java
+private final double pi = 3.14159;
+```
+
+And with Python...
+```py
+pi = 3.14159
+```
+
+</v-clicks>
+<v-clicks>
+
+- <span v-mark.highlight.purple="4">Global variables are available to all functions!</span>
+- Useful for values which don't change (*constants*)
+- The `final` keyword used when declaring the global variable `pi` tells Java that the value of `pi` cannot be changed to something other than 3.14159.
+
+</v-clicks>
+
+---
+
+### Summary
+
+```java
+// Global variable used by `volumeOfCylinder`.
+private final double pi = 3.14159;
+
+// Function with return value.
+private double volumeOfCylinder(double radius, double height) {
+    double baseArea = pi * radius * radius;
+    double volume = baseArea * height;
+    return volume;
+}
+
+// Function without return value.
+private void cow() {
+    System.out.println("^__^            ");
+    System.out.println("(oo)\\_______    ");
+    System.out.println("(__)\\       )\\/\\");
+    System.out.println("    ||----w |   ");
+    System.out.println("    ||     ||   ");
+}
+```
+```java
+double r = 27;
+double volume = volumeOfCylinder(r, 10);
+cow()
+```
+
+<!-- <Excalidraw drawFilePath="/days/day03/functions.excalidraw.json" darkMode /> -->
+
+<!-- Instructor can run the summary here as additional examples. -->
 
 ---
 
