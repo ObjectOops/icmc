@@ -85,3 +85,22 @@ It should actually be called "main".
 ```java
 public static void main(String[] args) { ...
 ```
+
+---
+
+7. In Java and Python, define a variable for each of the following types with your choice of data  
+a) int b) String c) double d) char e) boolean
+
+Possible answers (Java):  
+a) `int num = 2;`  
+b) `String someString = "some text";`  
+c) `double pi = 3.14159;`  
+d) `char someCharacter = 'Y';`  
+e) `boolean isBool = true;`
+
+Possible answers (Python):  
+a) `num = 2`  
+b) `some_string = "some text"`  
+c) `pi = 3.14159`  
+d) `some_char = 'Y'`  
+e) `is_bool = True`

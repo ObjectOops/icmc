@@ -403,6 +403,7 @@ print(num)
 
 ---
 layout: two-cols
+routeAlias: ascii_table
 ---
 
 #### The ASCII Table
@@ -516,6 +517,8 @@ String someString = scan.nextLine();
 <!-- Demo the example code. Some modifications may be needed to run in external environment. -->
 
 ---
+layout: two-cols
+---
 
 ## Operators
 
@@ -523,7 +526,6 @@ String someString = scan.nextLine();
 
 - We have already seen the assignment operator (`=`) and the addition operator (`+`)
 - There are many other operators
-![Java Operators](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLtbd8L3heos2wMpz8qb6lnnPkCru1hdd-cg&s)
   - We will gradually learn more about them
   - For full descriptions, visit this site: [docs.oracle.com](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/opsummary.html)
 - The *order of operations* generally applies in programming the same way as in algebra
@@ -531,6 +533,14 @@ String someString = scan.nextLine();
   - Put your expressions inside parenthesis [`(1 + 2) * 3`] to given them higher precedence
 
 </v-clicks>
+
+::right::
+
+<v-click at="2">
+
+![Java Operators](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjK4MpGlFS0LioQfawWbgmDzxDt2wcb8AjX30LkTHPlqtI7OBgySiYhAhwbvaAoe3FWu8t4672L7a8FEoHIStoUFoWC0LqwxHxAeV4knC34u8JYbKCq2BG_dE9ewckh2hFyCzb1_p771jh_/s1600/Screenshot+%2528447%2529.png)
+
+</v-click>
 
 ---
 

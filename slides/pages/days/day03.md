@@ -9,8 +9,10 @@ transition: slide-left
 
 **Agenda**
 
+- Review basic I/O
 - Using Arrays
 - String Manipulation
+- Basic Escape Sequences
 - *Break*
 - Defining Functions
 - Intro to Classes
@@ -18,7 +20,11 @@ transition: slide-left
 
 ::right::
 
+<Transform scale=0.9>
+
 <Toc minDepth=2 maxDepth=3 mode="onlyCurrentTree" />
+
+</Transform>
 
 <!-- Next slide contains a review of declaring arrays and strings. -->
 
@@ -39,54 +45,72 @@ src: day01.md#18
     - Python uses **lists**, which are similar to arrays
     - For now, we will treat them as the same thing
   - Most of the time, every **element** in an array will be of the same **data type**
-- Defining an array:
-<logos-java />
-```java
-String[] fruits = {"Apple", "Banana", "Cantaloupe"};
-String[] fiveEmptyStrings = new String[5];
-int[] fiveZeroes = new int[5];
-```
-<logos-python /> <span text-sm>(Technically a **list**.)</span>
-```py
-fruits = ["Apple", "Banana", "Cantaloupe"]
-```
+
+</v-clicks>
+
+---
+
+<v-clicks depth=3>
+
+- Defining an array:<br>
+  <logos-java />
+  ```java
+  String[] fruits = {"Apple", "Banana", "Cantaloupe"};
+  String[] fiveEmptyStrings = new String[5];
+  int[] fiveZeroes = new int[5];
+  ```
+  <logos-python /> <span text-sm>(Technically a **list**.)</span>
+  ```py
+  fruits = ["Apple", "Banana", "Cantaloupe"]
+  ```
 - Arrays can be **subscripted** to access their **elements**
   - Each element in an array can be referred to by a number called an **index**
-  - In Java and Python, indices (plural for index) <span v-mark.circle.pink="11">start from 0</span> 
-<logos-java />
-```java
-String firstFruit = fruits[0]; // The string "Apple" is at index 0.
-String secondFruit = fruits[1]; // The string "Banana" is at index 1.
-```
-<logos-python />
-```py
-first_fruit = fruits[0] # "Apple", same for Python.
-second_fruit = fruits[1] # "Banana"
-```
-- Getting the size / length of an array:
-<logos-java />
-```java
-int fruitsCount = fruits.length;
-```
-<logos-python />
-```py
-fruits_count = len(fruits) # `len` is short for "length".
-```
-- <span v-mark.highlight.orange="13">Things to not do with arrays:</span>
+  - In Java and Python, indices (plural for index) <span v-mark.circle.pink="4">start from 0</span><br>
+    <logos-java />
+    ```java
+    String firstFruit = fruits[0]; // The string "Apple" is at index 0.
+    String secondFruit = fruits[1]; // The string "Banana" is at index 1.
+    ```
+    <logos-python />
+    ```py
+    first_fruit = fruits[0] # "Apple", same for Python.
+    second_fruit = fruits[1] # "Banana"
+    ```
+
+</v-clicks>
+
+---
+
+<v-clicks depth=3>
+
+- Getting the size / length of an array:<br>
+  <logos-java />
+  ```java
+  int fruitsCount = fruits.length;
+  ```
+  <logos-python />
+  ```py
+  fruits_count = len(fruits) # `len` is short for "length".
+  ```
+- <span v-mark.highlight.orange="2">Things to not do with arrays:</span>
   - Mix elements of different types
   - Attempt to access an element that does not exist (such as with an index that's too big or negative)
+
+</v-clicks>
+<v-click>
+
 ```java {monaco-run} {autorun:false}
 public class Main {
     public static void main(String[] args) {
         String[] fruits = {"Apple", "Banana", "Cantaloupe"};
         
         String someFruit = fruits[3]; // Invalid index.
-        System.out.println(somefruit);
+        System.out.println(someFruit);
     }
 }
 ```
 
-</v-clicks>
+</v-click>
 
 <!-- In demo, demonstrate that negative indices and mixing types don't work. Negative indices do work in Python, but that's outside the scope of this. -->
 
@@ -94,7 +118,7 @@ public class Main {
 
 ### Arrays in Computer Memory
 
-Elements in an array are stored next to each other with incremental indices.
+Elements in an array are sequentially stored with incremental indices.
 
 ```java
 int[] nums = {5, 10, 15, 20};
@@ -132,13 +156,17 @@ public class Main {
 matrix = [[2, 4, 6], [8, 10, 12], [14, 16, 18]]
 ```
 
-<v-click>
+</v-click>
 
 <!-- Ask students what the output will be before revealing it. -->
 
 ---
+layout: two-cols-header
+---
 
 ### Multidimensional Arrays in Computer Memory
+
+::left::
 
 Consider the matrix from the previous slide.
 ```java
@@ -149,20 +177,28 @@ int[][] matrix = {
 };
 ```
 
+::right::
+
 <Excalidraw drawFilePath="/days/day03/arrays_2.excalidraw.json" darkMode />
 
 ---
 
 ## String Manipulation
 
-<v-clicks>
+<v-clicks depth=2>
 
-- Inside a string is an **array of characters**
-```java
-// Kind of like this:
-char[] insideString = {'h', 'e', 'l', 'l', 'o'};
-```
-- We can use indices to access each character in a string
+- Inside a string is an **array of characters**<br>
+  <logos-java />
+  ```java
+  // Kind of like this:
+  char[] insideString = {'h', 'e', 'l', 'l', 'o'};
+  ```
+  - We can use indices to access each character in a string <carbon-arrow-right />
+
+</v-clicks>
+
+---
+
 <logos-java />
 ```java {monaco-run} {autorun:false}
 public class Main {
@@ -176,10 +212,17 @@ public class Main {
 <logos-python />
 ```python {monaco-run} {autorun:false}
 s = "Hello, world!"
-c = s[0] # Get character at index 7.
+c = s[7] # Get character at index 7.
 print(c)
 ```
+
+---
+
 - We can also use indices to get a specific part of a string
+
+<v-click>
+
+<logos-java />
 ```java {monaco-run} {autorun:false}
 public class Main {
     public static void main(String[] args) {
@@ -199,35 +242,103 @@ s = "Hello, world!"
 s2 = s[0:5]
 print(s2)
 ```
-- The addition operator `+` works with strings. It's fairly obvious what it does
-<logos-java />
-```java
-String s1 = "Hello, ";
-String s2 = "world!";
-String s3 = s1 + s2; // --> s3 is "Hello, world!"
-```
-<logos-python />
-```py
-s1 = "Hello, "
-s2 = "world!"
-s3 = s1 + s2 # --> s3 is "Hello, world!"
-```
-- Getting the size / length of a string
-<logos-java />
-```java
-String s = "...";
-int stringLength = s.length(); // Notice that the empty parenthesis "()" are required.
-```
-<logos-python />
-```py
-s = "..."
-str_len = len(s)
-```
-- **There are more ways to manipulate strings (like replacing parts of a strings with `.replace`). Learn more here: [Java: docs.oracle.com](https://docs.oracle.com/javase/tutorial/java/data/manipstrings.html) [Python: docs.python.org](https://docs.python.org/3/library/stdtypes.html#string-methods)**
+
+</v-click>
+
+---
+zoom: 0.85
+---
+
+<v-clicks depth=2>
+
+- The addition operator `+` works with strings. It's fairly obvious what it does<br>
+  <logos-java />
+  ```java
+  String s1 = "Hello, ";
+  String s2 = "world!";
+  String s3 = s1 + s2; // --> s3 is "Hello, world!"
+  ```
+  <logos-python />
+  ```py
+  s1 = "Hello, "
+  s2 = "world!"
+  s3 = s1 + s2 # --> s3 is "Hello, world!"
+  ```
+- Getting the size / length of a string<br>
+  <logos-java />
+  ```java
+  String s = "...";
+  int stringLength = s.length(); // Notice that the empty parenthesis "()" are required.
+  ```
+  <logos-python />
+  ```py
+  s = "..."
+  str_len = len(s)
+  ```
+- **There are more ways to manipulate strings (like replacing parts of a strings with `.replace`).  
+  Learn more here:  
+  [Java: docs.oracle.com](https://docs.oracle.com/javase/tutorial/java/data/manipstrings.html)  
+  [Python: docs.python.org](https://docs.python.org/3/library/stdtypes.html#string-methods)**
 
 </v-clicks>
 
 <!-- Also ask for guesses before running examples. Note that the `charAt` and `length` are a methods. We will learn more about methods soon. -->
+
+---
+
+## Basic Escape Sequences
+
+<v-clicks depth=2>
+
+- When defining *strings* and *characters* in Java and Python, some characters cannot be usde directly.
+```python {monaco-run} {autorun:false}
+fail_string = "This is an "invalid string""
+```
+
+</v-clicks>
+
+---
+
+<v-clicks depth=2>
+
+- In the previous example, the double quote character (`"`) is already used to indicate the start and end of a string
+  - Using more double quote characters within the string "confuses" the programming language as to where the string starts, and where it ends.
+- To use double quotes inside a string, we can use a backslash (`\`)
+
+</v-clicks>
+<v-click>
+
+```python {monaco-run} {autorun:false}
+fail_string = "This is a \"valid string\"" # The \ character "escapes" the double quote.
+print(fail_string) # Notice that the \ character is not printed, but the double quotes are printed.
+```
+
+</v-click>
+
+---
+
+<v-clicks depth=2>
+
+  - The sequence of characters `\"` is called an **escape sequence**
+  - Inside a string `\"` is replaced by `"`
+- Characters to **not** use inside strings / characters and their **escape sequence**:
+  - `"` <carbon-arrow-right /> `\"`
+  - `'` <carbon-arrow-right /> `\'`
+  - `\` <carbon-arrow-right /> `\\`
+  - See the <Link to="keyboard_map">keyboard map</Link> to locate the `\` character
+- Escape sequences can also insert invisble characters
+  - The newline (LF) character <carbon-arrow-right /> `\n`
+  - The tab character <carbon-arrow-right /> `\t`
+  - See the <Link to="ascii_table">ASCII Table</Link> for more
+
+</v-clicks>
+<v-click>
+
+```python {monaco-run} {autorun:false}
+print("This string prints \" \' \n \t escape sequences.")
+```
+
+</v-click>
 
 ---
 
@@ -246,11 +357,11 @@ Have a break!
 - A **function**, also called a **method**, is a block of code that can be reused in varying contexts
   - This definition is unclear; let's see some examples
 - Say that we have a math function $f(x)=2^x*100$
-  - $f(0)=$<v-click>$1$</v-click>
-  - $f(1)=$<v-click>$2$</v-click>
-  - $f(5)=$<v-click>$32$</v-click>
+  - $f(0)=$<v-click at="5">$100$</v-click>
+  - $f(1)=$<v-click at="6">$200$</v-click>
+  - $f(5)=$<v-click at="7">$3200$</v-click>
 - If we have a complicated formula, we can simplify it with our function
-  - $2^5*100+2^1*100+2^0*100\Rightarrow f(5)+f(1)+f(0)=32+2+1=35$
+  - $2^5*100+2^1*100+2^0*100\Rightarrow f(5)+f(1)+f(0)=3200+200+100=3500$
 - We can do the same thing in languages like Java and Python
 - Functions have four parts:
   - *return type*
@@ -269,8 +380,12 @@ Have a break!
 
 Our goal: Ask the user for two names <span v-mark.underline.white>using the same prompt</span> and output them together.
 
+<Transform scale=0.85>
+
 ````md magic-move
 ```java
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -290,6 +405,8 @@ public class Main {
 }
 ```
 ```java
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -311,9 +428,11 @@ public class Main {
 }
 ```
 ```java
+import java.util.Scanner;
+
 public class Main {
     
-    private Scanner scan = null; // This is a global variable.
+    private static Scanner scan = null; // This is a global variable.
     
     public static void main(String[] args) {
         scan = new Scanner(System.in);
@@ -328,7 +447,7 @@ public class Main {
         // We have turned the prompting process into a function!
     }
     
-    private String prompt(int num) {
+    private static String prompt(int num) {
         System.out.println("Enter name #" + num);
         String name = scan.nextLine();
         return name;
@@ -336,11 +455,12 @@ public class Main {
 }
 ```
 ```java
+import java.util.Scanner;
 import java.util.Arrays;
 
 public class Main {
     
-    private Scanner scan = null; // This is a global variable.
+    private static Scanner scan = null; // This is a global variable.
     
     public static void main(String[] args) {
         scan = new Scanner(System.in);
@@ -355,7 +475,7 @@ public class Main {
         // Less typing, more coding!
     }
     
-    private String prompt(int num) {
+    private static String prompt(int num) {
         System.out.println("Enter name #" + num);
         String name = scan.nextLine();
         return name;
@@ -363,6 +483,8 @@ public class Main {
 }
 ```
 ````
+
+</Transform>
 
 <!-- 
 Copy-paste first and final transition into external environment and run from there.
@@ -382,60 +504,19 @@ We won't break it down since it makes for a good worksheet exercise.
 This example shows how to define a function with **multiple parameters** and **no return value**.  
 Goal: Calculate and output the *area* and *circumference* of two circles.  
 $$
-A(r)=\pi*r^2
+A(r)=\pi*r^2\\
 P(r)=2*\pi*r
 $$
 
-```java {monaco-run} {autorun:false}
-public class Main {
-    private final double pi = 3.14159; // Global variable.
-    
-    public static void main(String[] args) {
-        double radius1 = 3;
-        double radius2 = 9;
-        
-        double a1 = area(radius1);
-        double a2 = area(radius2);
-        
-        double c1 = circumference(radius1);
-        double c2 = circumference(radius2);
-        
-        outputCircleInfo(radius1, a1, c1);
-        outputCircleInfo(radius2, a2, c2);
-    }
-    
-    /*
-     * Return Type: double
-     * Name: area
-     * Parameters: double radius
-     */
-    private double area(double radius) {
-        return pi * radius * radius; // Function definition and return value.
-    }
+<RenderWhen context="print">
+<span text-sm>
 
-    /*
-     * Return Type: double
-     * Name: circumference
-     * Parameters: double radius
-     */
-    private double circumference(double radius) {
-        return 2 * pi * radius; // Function definition and return value.
-    }
-    
-    /*
-     * Return Type: void (nothing)
-     * Name: outputCircleInfo
-     * Parameters: double r, double a, double c
-     */
-    private void outputCircleInfo(double r, double a, double c) {
-        System.out.println("Circle Info:"); // Function definition.
-        System.out.println("Radius: " + r);
-        System.out.println("Area: " + a);
-        System.out.println("Circumference: " + c);
-        // No return value since function return type is `void`!
-    }
-}
-```
+The code below will be cut off by the page during export. Please view the full file here: <Link to="unavailable">FunctionsExample2.java</Link>
+
+</span>
+</RenderWhen>
+
+<<< @/snippets/FunctionsExample2.java java {monaco-run} {autorun:false, height:'200px'}
 
 <!-- Arguments start with the radii, then are passed down as the areas and circumferences. -->
 
@@ -450,12 +531,16 @@ These are the same as the two prior examples, but written using Python.
 
 ```py
 def prompt(num):
-    return input(f"Enter name #{num}")
+    return input(f"Enter name #{num}\n")
 
 names = [prompt(1), prompt(2), prompt(3), prompt(4)]
 
 print(names)
 ```
+
+Continued <carbon-arrow-right />
+
+---
 
 #### Example 2
 
@@ -469,7 +554,7 @@ def area(radius):
 def circumference(radius):
     return 2 * pi * radius
 
-def output_circle_info(r, a, c)
+def output_circle_info(r, a, c):
     print("Circle Info:")
     print(f"Radius: {r}")
     print(f"Area: {a}")
@@ -499,10 +584,10 @@ output_circle_info(radius2, a2, c2)
 In the past few Java examples, we saw the use of **global variables** or "class-scope variables".
 
 ```java
-private Scanner scan = null;
+private static Scanner scan = null;
 ```
 ```java
-private final double pi = 3.14159;
+private static final double pi = 3.14159;
 ```
 
 And with Python...
@@ -513,9 +598,10 @@ pi = 3.14159
 </v-clicks>
 <v-clicks>
 
-- <span v-mark.highlight.purple="4">Global variables are available to all functions!</span>
+- <span v-mark.highlight.purple="6">Global variables are available to all functions!</span>
 - Useful for values which don't change (*constants*)
 - The `final` keyword used when declaring the global variable `pi` tells Java that the value of `pi` cannot be changed to something other than 3.14159.
+- The `static` keyword will be discussed later
 
 </v-clicks>
 
@@ -523,35 +609,11 @@ pi = 3.14159
 
 ### Summary
 
-```java
-// Global variable used by `volumeOfCylinder`.
-private final double pi = 3.14159;
+<Transform scale=0.9>
 
-// Function with return value.
-private double volumeOfCylinder(double radius, double height) {
-    double baseArea = pi * radius * radius;
-    double volume = baseArea * height;
-    return volume;
-}
+<Excalidraw drawFilePath="/days/day03/functions.excalidraw.json" darkMode />
 
-// Function without return value.
-private void cow() {
-    System.out.println("^__^            ");
-    System.out.println("(oo)\\_______    ");
-    System.out.println("(__)\\       )\\/\\");
-    System.out.println("    ||----w |   ");
-    System.out.println("    ||     ||   ");
-}
-```
-```java
-double r = 27;
-double volume = volumeOfCylinder(r, 10);
-cow()
-```
-
-<!-- <Excalidraw drawFilePath="/days/day03/functions.excalidraw.json" darkMode /> -->
-
-<!-- Instructor can run the summary here as additional examples. -->
+</Transform>
 
 ---
 
@@ -561,17 +623,24 @@ cow()
 
 - Let's say that we want to store information about multiple people
 - We can use arrays:
-```java
-String[] names  = {   "Alice",      "Bob", "Charlie"};
-int[]    ages   = {        20,         21,        25};
-String[] cities = {"Shanghai", "New York",  "London"};
-```
+  ```java
+  String[] names  = {   "Alice",      "Bob", "Charlie"};
+  int[]    ages   = {        20,         21,        25};
+  String[] cities = {"Shanghai", "New York",  "London"};
+  ```
 - To get an individual person:
-```java
-String name = names[0]; // Alice
-int age = ages[0]; // 20
-String city = cities[0]; // Shanghai
-```
+  ```java
+  String name = names[0]; // Alice
+  int age = ages[0]; // 20
+  String city = cities[0]; // Shanghai
+  ```
+
+</v-clicks>
+
+---
+
+<v-clicks depth=2>
+
 - This is an inefficient way of storing and retrieving data!
 - **Classes** allow us to *abstract* our data
   - A **class** is like a blueprint for how to construct something
@@ -592,83 +661,18 @@ String city = cities[0]; // Shanghai
 
 ### Example
 
-```java {monaco-run} {autorun:false}
-public class Main {
-    public static void main(String[] args) {
-        // We can still use arrays to store multiple people, but here we only need one array.
-        Person[] people = {
-            // Use the `new` keyward when creating objects from the Person class.
-            new Person("Alice", 20, "Shanghai", "Aly"); // This a person object.
-            new Person("Bob", 21, "New York", "B"); // Another person object.
-            new Person("Charlie", 25, "London", "Chip"); // ...
-        }
-        
-        // Get a person.
-        Person person = people[0]; // `person` is an object instantiated from `Person`.
-        Person samePerson = people[0];
-        
-        person.sayHi();
-        samePerson.sayHi();
-        
-        // Both `person` and `samePerson` refer to the same object of `Person`.
-        // Changing one variabe's attributes will also be reflected by the other variable!
-        person.city = "Wonderland";
-        samePerson.sayHi();
-        // This is why they classes are "reference types".
-        
-        // We can access static attributes and static methods directly from a class without needing an object.
-        System.out.println(Person.NUMBER); // Access `NUMBER` directly from `Person`.
-        Person.someStaticMethod(); // Call `someStaticMethod` directly from `Person`.
-        
-        // Attempting to access private members will result in an error!
-        // String fail = person.nickname;
-        // person.sayNickname();
-    }
-}
+<RenderWhen context="print">
+<span text-sm>
 
-// The Person class.
-class Person {
-    // A static attribute.
-    public static final int NUMBER = 10;
-    
-    // Attributes:
-    public String name;
-    public int age;
-    public String city;
-    
-    // A private attribute.
-    private String nickname;
-    
-    // A constructor.
-    public Person(String name, int age, String city, String nick) {
-        // We use the `this` keyboard to distinguish between the `name` argument and the `name` attribute.
-        this.name = name;
-        this.age = age;
-        this.city = city;
-        // `this` is not required for the `nickname` attribute because the argument is called `nick`.
-        nickname = nick;
-    }
-    
-    // A method, just like a function.
-    public void sayHi() {
-        System.out.println("Hi, my name is " + name + ". I'm " + age + " years old and I live in " + city + ".");
-    }
-    
-    // A private method.
-    private void sayNickname() {
-        System.out.println("My nickname is " + nickname + ".");
-    }
-    
-    // A static method.
-    public void someStaticMethod() {
-        System.out.println("Did something.");
-    }
-}
-```
+The code below will be cut off by the page during export. Please view the full file here: <Link to="unavailable">class_example.java</Link>
+
+</span>
+</RenderWhen>
+
+<<< @/snippets/ClassExample.java java {monaco-run} {autorun:false, height:'300px'}
 
 <!-- 
 The instructor will be required to elaborate upon each of the comments.
-As with the main method, the main class makes for a good worksheet exercise.
 
 If time permits, use an external environment (it may be faster) to demonstrate getters and setters.
 -->
@@ -680,3 +684,7 @@ If time permits, use an external environment (it may be faster) to demonstrate g
 [Click here to access the worksheet.](worksheets/worksheet03/worksheet03.pdf)
 
 [Click here to access the answer key.](worksheets/worksheet03/answers03.pdf)
+
+[Bonus worksheet (one question, if you're willing).](worksheets/worksheet03/bonus03.pdf)
+
+[Bonus worksheet answer key.](worksheets/worksheet03/bonus_answers03.pdf)

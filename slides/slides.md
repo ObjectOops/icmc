@@ -6,8 +6,8 @@ addons:
   - excalidraw
   - java-runner
   - python-runner
-python:
-  installs: [ "cowsay" ]
+# python:
+#   installs: [ "cowsay" ]
 title: ICMC Summer Coding
 titleTemplate: '%s'
 info: |

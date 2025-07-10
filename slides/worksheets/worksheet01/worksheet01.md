@@ -61,10 +61,13 @@ public class Main {
         int guess = scan.nextInt();
         System.out.println("You have guessed " + guess + ".");
 
-        boolean isCorrect = (guess == 2);
+        boolean isCorrect = (guess == 2); // This line is correct.
         
         System.out.println("The guess was correct?: " + isCorrect);
         scan.close();
     }
 }
 ```
+
+7. In Java and Python, define a variable for each of the following types with your choice of data  
+a) int b) String c) double d) char e) boolean

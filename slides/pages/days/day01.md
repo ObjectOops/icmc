@@ -75,9 +75,13 @@ Helpful cheatsheets to reference:
 
 ### Worksheets
 
+<span text-sm>
+
 - Worksheets will be frequently assigned, but <span v-mark.underline.pink="+1">are not graded</span>.
 - You may check your answers against the answer keys.
 - <span v-mark.underline.pink="+1">Both will be posted on these slides.</span>
+
+</span>
 
 </v-click>
 
@@ -278,6 +282,8 @@ can be on multiple lines.
 <!-- Note that the double quotes for strings are necessary, but won't be printed! -->
 
 ---
+routeAlias: keyboard_map
+---
 
 ## Keyboard Map
 
@@ -338,6 +344,7 @@ print("Value of exampleVariable:", example_variable)
 
 <!-- 
 Demo each type.
+> Boolean literals differ between Java and Python!
 Discuss the pattern behind each of these types (small data).
 Show that you cannot assign a literal of the incorrect type.
 Note about the assignment operator.
