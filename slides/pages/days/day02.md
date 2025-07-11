@@ -24,15 +24,7 @@ transition: slide-left
 <Toc minDepth=2 maxDepth=3 mode="onlyCurrentTree" />
 
 ---
-src: day01.md#16
----
-
----
-src: day01.md#17
----
-
----
-src: day01.md#18
+src: day01.md#16,17,18
 ---
 
 ---
@@ -546,7 +538,7 @@ layout: two-cols
 
 <v-click>
 
-<logos-python /> <span text-sm>(using Python here, but it also applies to Java)</span>
+<logos-python /> <span text-sm>(mostly the same between Python and Java)</span>
 
 ```python {monaco-run} {autorun:false}
 num1 = 5
@@ -554,6 +546,9 @@ num2 = 6
 num3 = 2 + num1 * num2
 print(num3)
 ```
+
+<logos-java />
+
 ```java {monaco-run} {autorun:false}
 public class Main {
     public static void main(String[] args) {
@@ -569,6 +564,7 @@ public class Main {
 <!-- 
 Try some operators in the Python demo. 
 Show that addition doesn't simply work between strings and other types, although it does in Java.
+Integer division is demonstrated after casting in the following slides.
 -->
 
 ---
@@ -637,6 +633,33 @@ public class Main {
 ```
 
 <!-- Note that the addition operator between a string and primitive types only works in Java, but not in Python. -->
+
+---
+
+### Integer Division
+
+<v-clicks>
+
+In **Java**, when using the division operator (`/`) between **two integers**, integer division is performed.
+
+<span v-mark.underline.pink>Integer division is the same as regular division, but any digits after the decimal point are discarded.</span>
+
+> *This is called "flooring"*
+
+<logos-java />
+
+```java {monaco-run} {autorun:false}
+public class Main {
+    public static void main(String[] args) {
+      double num = 10 / 3;
+      System.out.println(String.valueOf(num));
+    }
+}
+```
+
+</v-clicks>
+
+<!-- Switch around the values being divided to demonstrate. -->
 
 ---
 

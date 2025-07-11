@@ -530,7 +530,7 @@ These are the same as the two prior examples, but written using Python.
 #### Example 1
 
 ```py
-def prompt(num):
+def prompt(num): # <-- notice that Python uses a single colon ":" instead of curly braces "{}".
     return input(f"Enter name #{num}\n")
 
 names = [prompt(1), prompt(2), prompt(3), prompt(4)]
@@ -539,6 +539,11 @@ print(names)
 ```
 
 Continued <carbon-arrow-right />
+
+<!-- 
+Instructor can skip this slide completely.
+First example needs to be run in an external environment. 
+-->
 
 ---
 
@@ -573,7 +578,7 @@ output_circle_info(radius1, a1, c1)
 output_circle_info(radius2, a2, c2)
 ```
 
-<!-- First example needs to be run in an external environment. -->
+<!-- Instructor can skip this slide completely. -->
 
 ---
 
