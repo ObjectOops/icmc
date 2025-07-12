@@ -16,7 +16,6 @@ transition: slide-left
 - *Break*
 - Pass by value vs. pass by reference
 - Basic Runtime Complexity
-- Sorting Algorithms Overview
 - Data structures beyond arrays
 - *Worksheet*
 
@@ -349,9 +348,10 @@ else:
 - Loops allow us to run a block of code multiple times
 - Very similar to conditionals
   - A loop will run if a specific boolean expression is *true*
-- There are three kinds of loops:
+- There are four kinds of loops:
   - `while` loops
   - `for` loops
+  - *for-each* loops
   - *do-while* loops
 - Loops can be stopped by any point by using a `break` statement
 
@@ -459,6 +459,47 @@ Can skip for loops for Python since it's weird.
 
 ---
 
+### *for-each* loops
+
+<v-clicks>
+
+- These loops are useful when going through the elements of an array **in order**
+
+</v-clicks>
+<v-click>
+
+The following examples print the elements in an array of strings.
+
+<logos-java />
+
+```java {monaco-run} {autorun:false}
+public class Main {
+    public static void main(String[] args) {
+        String[] arr = {"Alice", "Bob", "Charlie"};
+        
+        for (String s : arr) {
+            System.out.print(s + " ");
+        }
+    }
+}
+```
+
+</v-click>
+<v-click>
+
+<logos-python />
+
+```python {monaco-run} {autorun:false}
+arr = ["Alice", "Bob", "Charlie"]
+
+for s in arr:
+    print(s)
+```
+
+</v-click>
+
+---
+
 ### *do-while* loops
 
 <v-clicks depth=2>
@@ -502,6 +543,8 @@ public class Main {
 
 To stop and break out of a loop, use the `break` statement.
 
+<v-click>
+
 <logos-java />
 
 ```java {monaco-run} {autorun:false}
@@ -535,6 +578,8 @@ while True:
     print(" | ", end='')
 print("\nDone")
 ```
+
+</v-click>
 
 ---
 
@@ -599,6 +644,8 @@ Have a break!
 ### Example 1 - Java <logos-java />
 
 ```java {monaco-run} {autorun:false}
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         // Comparing Strings
@@ -615,7 +662,8 @@ public class Main {
         // Incorrect
         System.out.println(arr1 == arr2);
         // Correct
-        // My internet connection is out, I can't search up if there's a handy utility for this or if one must use a loop.
+        Arrays.equals(arr1, arr2);
+        Arrays.deepEquals(arr1, arr2); // Use for multidimensional arrays.
     }
 }
 ```
@@ -709,3 +757,341 @@ print(f"After: {nums=} {num=} {my_string=}")
 
 ---
 
+## Basic Runtime Complexity
+
+<v-clicks>
+
+The following program is an **algorithm** (steps to solve a program) that finds the smallest integer in a list of integers.
+
+```python {monaco-run} {autorun:false}
+nums = [-100, 400, 600, -200, 300, 0, -1, 500, -600, 800]
+smallest = nums[0]
+for i in nums:
+    if i < smallest:
+        smallest = i
+print(f"{smallest} found in {len(nums)} integers")
+```
+
+How fast is the program?  
+How fast would it be if we used a million integers? A billion?
+
+</v-clicks>
+
+<!-- Python provides utilities to do this more simply and efficienctly, but the loop algorithm is written out here for clarity. -->
+
+---
+
+<v-clicks>
+
+- The **runtime complexity** of an algorithm describes how the amount of time for an algorithm to run changes as the size of the input to the algorithm changes.
+  - You can refer back to this slide once later examples make it more clear what this means
+- We use Big-O notation to describe this behavior:
+  - $O(1)$ <carbon-arrow-right /> constant time
+  - $O(\log(n))$ <carbon-arrow-right /> logarithmic time
+  - $O(n)$ <carbon-arrow-right /> linear time
+  - $O(n\log(n))$ <carbon-arrow-right /> linearithmic time
+  - $O(n^2)$ <carbon-arrow-right /> quadratic time
+  - $O(n^3)$ <carbon-arrow-right /> cubic time
+  - $O(2^n)$ <carbon-arrow-right /> exponential time
+- Example: Accessing an element from an array using an index takes the same amount of time regardless of how big or small the index is
+  - $O(1)$ / constant time
+
+</v-clicks>
+<v-click>
+
+<Excalidraw drawFilePath="/days/day04/complexity.excalidraw.json" darkMode />
+
+</v-click>
+
+---
+
+## More Data Structures
+
+<v-clicks depth=2>
+
+- Arrays have some disadvantages:
+  - Cannot add or insert new elements
+  - Cannot remove existing elements
+  - Indices can be difficult to work with
+- Other *data structures* are available to solve these issues
+- There are many data structures, we will look at these:
+  - `ArrayList`
+  - `LinkedList`
+  - `HashMap`
+
+</v-clicks>
+
+---
+
+### `ArrayList`
+
+An `ArrayList` is a variable-length array:
+- Add / insert elements
+- Remove elements
+
+Learn more here: [docs.oracle.com](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)
+
+<v-click>
+
+<logos-java />
+
+```java {monaco-run} {autorun:false}
+import java.util.Arrays;
+import java.util.ArrayList; // Import the `ArrayList` class!
+
+public class Main {
+    public static void main(String[] args) {
+        // Specify the data type being stored inside angle brackets "<>".
+        // Notice that the class `Integer` is used here instead of simply `int`.
+        // This is a quirk of Java.
+        ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(2, 4, 6, 8));
+        // Initialize with some data using `Arrays.asList`.
+        
+        // Get an element at a specific index in the array-list.
+        int element = nums.get(2); // Gets the integer at index 2 --> 6
+        System.out.println(element);
+        
+        // Add an element to the end of the array-list.
+        nums.add(5);
+        
+        // Insert an element at index 3.
+        nums.add(3, 6);
+        
+        // Remove an element at index 1.
+        nums.remove(1);
+        
+        // Get the number of elements in the linked-list.
+        int count = nums.size();
+        System.out.println("Final contents: " + nums + ", size: " + count);
+    }
+}
+```
+
+</v-click>
+<v-clicks depth=3>
+
+- Additional notes:
+  - Using an invalid index will cause an error
+  - `get` runs on $O(1)$ / constant time
+  - `add` and `remove` run on average $O(n)$ / linear time
+    - Adding / removing is a comparatively slow operation
+
+</v-clicks>
+<v-click>
+
+<logos-python />
+
+```python {monaco-run} {autorun:false}
+# Lists in Python are already variable-length arrays.
+# No need to import anything.
+nums = [2, 4, 6, 8]
+
+# Get an element at a specific index.
+e = nums[2]
+
+# Add an element to the end of the list.
+nums.append(5)
+
+# Insert an element at index 3.
+nums.insert(3, 6)
+
+# Remove an element at index 1.
+nums.pop(1)
+
+print(f"Final contents: {nums}, size: {len(nums)}")
+```
+
+Learn more here: [docs.python.org](https://docs.python.org/3/tutorial/datastructures.html)
+
+</v-click>
+
+<!-- 
+Instructor does not have to work through Python examples manually, as it's largely similar to arrays.
+If time permits, the instructor can opt to explain the internal working of variable-length arrays once the remaining slides for this day are complete.
+-->
+
+---
+
+### `LinkedList`
+
+A `LinkedList` behaves like an `ArrayList`, but with certain advantages and disadvantages.  
+<span v-mark.underline.white>Python does not have linked-lists</span>, so we will only look at Java.
+
+Learn more here: [docs.oracle.com](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html)
+
+<v-click>
+
+<logos-java />
+
+```java {monaco-run} {autorun:false}
+import java.util.Arrays;
+import java.util.LinkedList; // Import the `LinkedList` class!
+
+public class Main {
+    public static void main(String[] args) {
+        // Specify the data type being stored inside angle brackets "<>".
+        // Notice that the class `Integer` is used here instead of simply `int`.
+        // This is a quirk of Java.
+        LinkedList<Integer> nums = new LinkedList<>(Arrays.asList(2, 4, 6, 8));
+        // Initialize with some data using `Arrays.asList`.
+        
+        // Get an element at a specific index in the linked-list.
+        int element = nums.get(2); // Gets the integer at index 2 --> 6
+        System.out.println(element);
+        
+        // Add an element to the beginning and end of the linked-list.
+        nums.addFirst(5);
+        nums.addLast(5);
+        
+        // Insert an element at index 3.
+        nums.add(3, 6);
+        
+        // Remove an element at index 1.
+        nums.remove(1);
+        
+        // Remove the first and last elements.
+        nums.removeFirst();
+        nums.removeLast();
+        
+        // Get the number of elements in the linked-list.
+        int count = nums.size();
+        System.out.println("Final contents: " + nums + ", size: " + count);
+    }
+}
+```
+
+</v-click>
+<v-clicks depth=3>
+
+- Additional notes:
+  - Using an invalid index will cause an error
+  - `get` runs on $O(n)$ / linear time
+    - <span v-mark.underline.pink="4">This is **slower** than `ArrayList`!</span>
+  - `add` and `remove` run on average $O(n)$ / linear time
+  - `addFirst`, `addLast`, `removeFirst`, `removeLast` run on $O(1)$ / constant time
+    - <span v-mark.underline.pink="7">This is **faster** than `ArrayList`!</span>
+- Prefer to use `LinkedList` over `ArrayList` when frequently adding / removing elements at the start / end of the data structure.
+
+</v-clicks>
+
+<!-- If time permits, the instructor can opt to explain the internal working of linked-lists once the remaining slides for this day are complete. -->
+
+---
+
+### `HashMap`
+
+<v-clicks depth=2>
+
+- An array is a data structure that relates indices to values.
+- A `HashMap` is a data structure that relates *keys* to *values*
+  - We can get a values associated with a key
+    - But not a key asociated with a value!
+  - A key does not have to be an integer!
+  - Keys are often useful as strings, but can be anything
+  - Keys do not have to be in-order
+  - A single key is associated with a single value
+    - Stored as a *key-value pair*
+  - **There are no duplicate keys**
+
+</v-clicks>
+<v-click>
+
+Learn more here: [docs.oracle.com](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html)
+
+</v-click>
+<v-click>
+
+Let's say that a group of friends are playing the board game Monopoly, and they want to use a program to keep track of their cash balance in the game.
+
+<logos-java />
+
+```java {monaco-run} {autorun:false}
+import java.util.Arrays;
+import java.util.HashMap; // Import the `HashMap` class!
+
+public class Main {
+    public static void main(String[] args) {
+        // Key type: `String`
+        // Value type: `Integer` / `int`
+        HashMap<String, Integer> map = new HashMap<>();
+        
+        // Add / change a key-value pair.
+        map.put("Alice", 2000);
+        map.put("Bob", 1900);
+        map.put("Charlie", 1950);
+
+        map.put("Alice", 3000); // Changes the Alice's existing balance.
+        
+        // Check if the map has a specific key.
+        System.out.println("Contains Alice: " + map.containsKey("Alice"));
+        System.out.println("Contains Dennis: " + map.containsKey("Dennis"));
+        
+        // Get a value associated with a key.
+        System.out.println("Alice's Balance: " + map.get("Alice"));
+        System.out.println("Dennis's Balance: " + map.get("Dennis")); // `null` since Dennis is not in the map.
+        
+        // Get the number of key-value pairs in the hashmap.
+        int count = map.size();
+        System.out.println("Final contents: " + map + ", size: " + count);
+    }
+}
+```
+
+</v-click>
+<v-clicks depth=3>
+
+- Additional notes:
+  - `put`, `constansKey`, and `get` all run on average $O(1)$ / constant time
+  - The hashmap is a very efficient data structure
+
+</v-clicks>
+<v-click>
+
+In Python, hashmaps are called *dictionaries*.
+
+<logos-python />
+
+```python {monaco-run} {autorun:false}
+map = dict()
+
+# Or, create a dictionary with some initial data.
+# map = {
+#     "Alice": 100,
+#     "Bob": 200,
+#     "Charlie": 150
+# }
+
+# Add / change a key-value pair.
+map["Alice"] = 2000
+map["Bob"] = 1900
+map["Charlie"] = 1950
+
+map["Alice"] = 3000 # Changes the Alice's existing balance.
+
+# Check if the map has a specific key.
+hasAlice = "Alice" in map
+hasDennis = "Dennis" in map
+print("Contains Alice:", hasAlice)
+print("Contains Dennis:", hasDennis)
+
+# Get a value associated with a key.
+print("Alice's Balance: " + map.get("Alice"))
+print("Dennis's Balance: " + map.get("Dennis")) # `None` since Dennis is not in the map.
+# `None` is the equivalent of `null` in Python.
+
+print(f"Final contents: {map}, key-value pairs: {len(map)}")
+```
+
+Learn more here: [docs.python.org](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
+
+</v-click>
+
+<!-- If time permits, the instructor can opt to explain the internal working of hashmaps once the remaining slides for this day are complete. -->
+
+---
+
+## Worksheet
+
+[Click here to access the worksheet.](worksheets/worksheet04/worksheet04.pdf)
+
+[Click here to access the answer key.](worksheets/worksheet04/answers04.pdf)

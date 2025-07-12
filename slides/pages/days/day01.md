@@ -63,7 +63,7 @@ Helpful cheatsheets to reference:
 
 | <DateTitle offset=0 /> | <DateTitle offset=1 /> | <DateTitle offset=2 /> | <DateTitle offset=3 /> | <DateTitle offset=4 /> |
 | :---: | :---: | :---: | :---: | :---: |
-| Variables, Data Types, I/O | Using Data Types and Variables | Arrays, Strings, Functions, Intro to Classes | Control Flow, Data Structures, ADTs, Polymorphism | Call Stacks, Recusion |
+| Variables, Data Types, I/O | Using Data Types and Variables | Arrays, Strings, Functions, Intro to Classes | Control Flow, Data Structures | Imports / Packages, Exception Handling |
 
 ### Week 2 - Projects - <DateTitle offset=7 /> to <DateTitle offset=11 />
 
