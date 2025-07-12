@@ -341,6 +341,8 @@ public class Main {
 <!-- Also demonstrate using `long`? -->
 
 ---
+routeAlias: bits
+---
 
 <v-clicks depth=2>
 

@@ -498,6 +498,46 @@ public class Main {
 
 ---
 
+### `break` statement
+
+To stop and break out of a loop, use the `break` statement.
+
+<logos-java />
+
+```java {monaco-run} {autorun:false}
+public class Main {
+    public static void main(String[] args) {
+        int num = 0;
+        while (true) {
+            System.out.print(num);
+            if (num == 9) {
+                break; // Breaks the loop.
+            }
+            System.out.print(" | ");
+        }
+        // Execution jumps to here when `break` executes.
+        System.out.println("\nDone");
+    }
+}
+```
+
+</v-click>
+<v-click>
+
+<logos-python />
+
+```python {monaco-run} {autorun:false}
+num = 0
+while True:
+    print(num, end='')
+    if num == 9:
+        break
+    print(" | ", end='')
+print("\nDone")
+```
+
+---
+
 ## Break
 
 Have a break!
@@ -506,4 +546,166 @@ Have a break!
 
 ---
 
+## Pass by reference vs. pass by value
+
+<v-clicks depth=2>
+
+- Notice testing if `input` was not equal to "confirm" in the previous example
+  - `!input.equals("confirm")`
+  - *not input string equals "confirm"*
+- The `String` type is a *reference type*
+  - Other reference types include *arrays*, the `Scanner`, and any *classes*
+  - <span v-mark.highlight.red="6">We cannot use the equality operator `==` on reference types</span>
+
+</v-clicks>
+
+### Variables in Computer Memory
+
+<v-clicks depth=2>
+
+- Many modern computers break data into **bytes**
+  - A **byte** is 8 **bits**
+  - A **bit** is a single binary state state, `1` or `0`
+  - Recall: A 32-bit integer has "31 binary digits and 1 bit to indicate the sign"
+    - <Link to="bits">Link to slide</Link>
+- In these systems, each **byte** has an **address** that represents where it is in computer memory
+
+</v-clicks>
+<v-click>
+
+<Excalidraw drawFilePath="/days/day04/bytes.excalidraw.json" darkMode />
+
+</v-click>
+
+---
+
+<v-clicks>
+
+- *primitive types* like `int`, `double`, `char`, `boolean`:
+  - Variable contains data in bytes
+- *reference types* like `String`, `Scanner`, *arrays*, any *classes*:
+  - Variable contains <span v-mark.underline.pink="2">address to data in bytes</span>
+  <span text-sm>(simplification)</span>
+- **If we use the equality operator `==` on reference types, it compares the addresses, not the data**
+
+</v-clicks>
+
+---
+
+<Excalidraw drawFilePath="/days/day04/by_reference.excalidraw.json" darkMode />
+
+---
+
+### Example 1 - Java <logos-java />
+
+```java {monaco-run} {autorun:false}
+public class Main {
+    public static void main(String[] args) {
+        // Comparing Strings
+        String s1 = "hello";
+        String s2 = "hello";
+        // Incorrect
+        System.out.println(s1 == s2);
+        // Correct
+        System.out.println(s1.equals(s2));
+        
+        // Comparing Arrays
+        int[] arr1 = {1, 2, 3};
+        int[] arr2 = {1, 2, 3};
+        // Incorrect
+        System.out.println(arr1 == arr2);
+        // Correct
+        // My internet connection is out, I can't search up if there's a handy utility for this or if one must use a loop.
+    }
+}
+```
+
+---
+
+### Example 2 - Java <logos-java />
+
+<v-clicks depth=2>
+
+- When passing *arguments* into the *parameters* of a *function*, 
+  - The data of *primitive types* is copied
+  - The data of *reference types* is **not** copied
+- Example of this:
+
+</v-clicks>
+<v-click>
+
+```java {monaco-run} {autorun:false}
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3};
+        int num = 4;
+        String myString = "Test 1";
+        System.out.println("nums before: " + Arrays.toString(nums));
+        System.out.println("num before: " + num);
+        System.out.println("myString before: " + myString);
+        doSomething(nums, num);
+        System.out.println("nums after: " + Arrays.toString(nums));
+        System.out.println("num after: " + num);
+        System.out.println("myString after: " + myString);
+    }
+    
+    private static void doSomething(int[] arr, int n, String s) {
+        arr[1] = 3;
+        num = 5;
+        s = "Test 2"; // Although strings are a reference type, Java treats them more like primitive type in this context.
+    }
+}
+```
+
+</v-click>
+<v-click>
+
+**Both `nums` and `arr` are references to the same data. Changing one of them will change the other.**  
+`num` and `n` each have their own copy of the data originally in `num`. Changing one of them **will not** change the other. Same with `myString` and `s` <span text-sm>(but this is a special case with strings in Java)</span>
+
+</v-click>
+
+---
+
+### Examples - Python <logos-python />
+
+In Python, things are weird and it's difficult to explain.  
+The example below shows how primitive and reference types are treated.
+
+```python {monaco-run} {autorun:false}
+# Comparing Strings
+s1 = "hello"
+s2 = "hello"
+print(s1 == s2) # This is correct in Python!
+# The Python interpreter is designed to make things easier for programmers.
+# It knows to compare the data in the strings when using the `==` operator.
+
+arr1 = [1, 2, 3]
+arr2 = [1, 2, 3]
+print(arr1 == arr2) # This also works. The Python interpreter helps us again.
+
+arr3 = [[1, 2, 3], [4, 5, 6]]
+arr4 = [[1, 2, 3], [4, 5, 6]]
+print(arr3 == arr4) # This does not work!
+# The Python interpret will not help you when using multidimensional arrays / lists!
+# It fails to compare the data correctly within the sublists.
+
+def do_something(arr, n, s):
+    arr[1] = 3
+    n = 5
+    s = "Test 2"
+
+nums = [1, 2, 3]
+num = 4
+my_string = "Test 1"
+print(f"Before: {nums=} {num=} {my_string=}")
+do_something()
+print(f"After: {nums=} {num=} {my_string=}")
+```
+
+<!-- This slide can be noted, and then promptly skipped. -->
+
+---
 

@@ -25,6 +25,13 @@ public class Main {
         System.out.println(Person.NUMBER); // Access `NUMBER` directly from `Person`.
         Person.someStaticMethod(); // Call `someStaticMethod` directly from `Person`.
         
+        // You can treat the keyword `null` as meaning "no data specified yet".
+        Person temporaryPerson = null;
+        // The object can be properly initialized later.
+        // temporaryPerson = new Person("Echo", 1000, "Atlantis", "E");
+        // Calling methods on an object with value `null` will cause a runtime error!
+        // temporaryPerson.sayHi();
+        
         // Attempting to access private members will result in an error!
         // String fail = person.nickname;
         // person.sayNickname();
