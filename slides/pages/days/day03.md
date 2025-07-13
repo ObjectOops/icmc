@@ -217,6 +217,8 @@ print(c)
 ```
 
 ---
+hideInToc: true
+---
 
 - We can also use indices to get a specific part of a string
 
@@ -508,15 +510,15 @@ A(r)=\pi*r^2\\
 P(r)=2*\pi*r
 $$
 
-<RenderWhen context="print">
+<!-- <RenderWhen context="print"> -->
 <span text-sm>
 
-The code below will be cut off by the page during export. Please view the full file here: <Link to="unavailable">FunctionsExample2.java</Link>
+<!-- The code below will be cut off by the page during export. -->Please view the full file here: <GitHubFileLink filePath="FunctionsExample2.java">FunctionsExample2.java</GitHubFileLink>
 
 </span>
-</RenderWhen>
+<!-- </RenderWhen> -->
 
-<<< @/snippets/FunctionsExample2.java java {monaco-run} {autorun:false, height:'200px'}
+<<< @/snippets/FunctionsExample2.java java {monaco-run} {autorun:false, height:'150px', runnerOptions:{file_path:'FunctionsExample2.java'}}
 
 <!-- Arguments start with the radii, then are passed down as the areas and circumferences. -->
 
@@ -666,15 +668,15 @@ pi = 3.14159
 
 ### Example
 
-<RenderWhen context="print">
+<!-- <RenderWhen context="print"> -->
 <span text-sm>
 
-The code below will be cut off by the page during export. Please view the full file here: <Link to="unavailable">class_example.java</Link>
+<!-- The code below will be cut off by the page during export. -->Please view the full file here: <GitHubFileLink filePath="ClassExample.java">ClassExample.java</GitHubFileLink>
 
 </span>
-</RenderWhen>
+<!-- </RenderWhen> -->
 
-<<< @/snippets/ClassExample.java java {monaco-run} {autorun:false, height:'300px'}
+<<< @/snippets/ClassExample.java java {monaco-run} {autorun:false, height:'300px', runnerOptions:{file_path:'ClassExample.java'}}
 
 <!-- 
 The instructor will be required to elaborate upon each of the comments.

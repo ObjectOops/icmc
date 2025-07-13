@@ -1,4 +1,4 @@
-public class Main {
+public class FunctionsExample2 {
     private static final double pi = 3.14159; // Global variable.
     
     public static void main(String[] args) {

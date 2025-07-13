@@ -644,20 +644,24 @@ public class Main {
 
 In **Java**, when using the division operator (`/`) between **two integers**, integer division is performed.
 
-<span v-mark.underline.pink>Integer division is the same as regular division, but any digits after the decimal point are discarded.</span>
+<span v-mark.underline.pink="2">Integer division is the same as regular division, but any digits after the decimal point are discarded.</span>
 
-> *This is called "flooring"*
+> *This is called "flooring".*
+
+<div>
 
 <logos-java />
 
 ```java {monaco-run} {autorun:false}
 public class Main {
     public static void main(String[] args) {
-      double num = 10 / 3;
-      System.out.println(String.valueOf(num));
+        double num = 10 / 3;
+        System.out.println(String.valueOf(num));
     }
 }
 ```
+
+</div>
 
 </v-clicks>
 

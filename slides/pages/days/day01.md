@@ -30,7 +30,7 @@ transition: slide-left
 
 Message us on Discord or send an email to the following addresses:
 - <code><Obfuscate ob="aW93YWNpdHltYXRoY2lyY2xlQGdtYWlsLmNvbQo=" /></code>
-- <code><Obfuscate ob="YWxleHlhbzJAaWxsaW5vaXMuZWR1Cg==" /></code>
+<!-- - <code><Obfuscate ob="YWxleHlhbzJAaWxsaW5vaXMuZWR1Cg==" /></code> -->
 
 <!-- We'll be using two programming languages. Transitioning from Python to Java, but still including Python. -->
 
@@ -98,7 +98,8 @@ Helpful cheatsheets to reference:
 <AutoFitText min=0 max=1>
 <span v-mark.circle.pink="1">
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ObjectOops/icmc/HEAD?urlpath=vscode)
+<!-- [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ObjectOops/icmc/HEAD?urlpath=vscode) -->
+<StartupBadge />
 
 </span>
 </AutoFitText>

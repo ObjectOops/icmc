@@ -1,4 +1,4 @@
-public class Main {
+public class ClassExample {
     public static void main(String[] args) {
         // We can still use arrays to store multiple people, but here we only need one array.
         Person[] people = {

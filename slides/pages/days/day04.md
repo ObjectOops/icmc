@@ -3,7 +3,7 @@ layout: two-cols
 transition: slide-left
 ---
 
-# <DateTitle offset=2 />
+# <DateTitle offset=3 />
 
 <StartupBadge />
 
@@ -36,24 +36,33 @@ src: day03.md#4-5,23
 <v-clicks depth=2>
 
 - This is the multiplication operator: `*`
-  - What needs to be on either side of it to work? <v-click>Two integers or floating-point values</v-click>
-  - What does it return? <v-click>An integer if both values are integers, a floating-point if at least one value is an integer</v-click>
-- This is the equality operator: `==`
-  - What needs to be on either side of it to work? <v-click hide>(Guess!)</v-click><v-click at="+0">Two variable of compatible primitive types, like an integer and an integer, or a double and an integer</v-click>
-  - What does it return? <v-click hide>(Guess!)</v-click><v-click at="+0">**A boolean value**</v-click>
+  - What needs to be on either side of it to work? <v-click at="3">*Two integers or floating-point values*</v-click>
+  - What does it return? <v-click at="4">*An integer if both values are integers, a floating-point if at least one value is an integer*</v-click>
+- This is the equality operator: *==*
+  - What needs to be on either side of it to work (guess)? <v-click at="6">*Two variable of compatible primitive types, like an integer and an integer, or a double and an integer*</v-click>
+  - What does it return (guess)? <v-click at="7">**A boolean value**</v-click>
+
+</v-clicks>
+
+---
+
+<v-clicks depth=2>
+
 - List of comparison operators:
-  - `==` <carbon-arrow-right /> equality operator, tests if two values are equal
-    - <span text-sm>The single equals sign `=` is already used as the assignment operator!</span>
-  - `!=` <carbon-arrow-right /> inequality operator, tests if two values are not equal
-  - `<` <carbon-arrow-right /> less than
-  - `>` <carbon-arrow-right /> greater then
-  - `<=` <carbon-arrow-right /> less than or equal to
-  - `>=` <carbon-arrow-right /> greater than or equal to
+  - *==* <carbon-arrow-right /> equality operator, tests if two values are equal
+    - <span text-sm>The single equals sign *=* is already used as the assignment operator!</span>
+  - *!=* <carbon-arrow-right /> inequality operator, tests if two values are not equal
+  - *<* <carbon-arrow-right /> less than
+  - *>* <carbon-arrow-right /> greater then
+  - *<=* <carbon-arrow-right /> less than or equal to
+  - *>=* <carbon-arrow-right /> greater than or equal to
 
 </v-clicks>
 
 <!-- Will discuss comparing reference types later. -->
 
+---
+hideInToc: true
 ---
 
 ```python {monaco-run} {autorun:false}
@@ -78,7 +87,7 @@ print(f"not bool1 != bool2: {not bool1 != bool2}")
 # Example: !bool1 == bool2
 ```
 
-<!-- Solve examples manually before running. -->
+<!-- Solve examples manually before running. Run in two batches as to not overflow the screen. -->
 
 ---
 
@@ -105,7 +114,9 @@ print(f"not bool1 != bool2: {not bool1 != bool2}")
 
 <v-clicks>
 
-Given two boolean values (*A*, *B*), the AND operator returns *true* if and only if *A* AND *B* are both *true*.
+Given two boolean values (*A*, *B*), the AND operator returns *true* if and only if *A* AND *B* are both *true*.  
+- `1` is *true*
+- `0` is *false*
 
 The following shows the **truth table** for AND.  
 A **truth table** shows all possible cominations of inputs, and the corresponding outputs.
@@ -153,7 +164,7 @@ Given **a single** boolean value (*A*), the NOT operator returns the opposite of
 
 ---
 
-<v-click>
+<v-clicks>
 
 Let's say that Mr. Dijkstra (a very famous computer scientist) wants to get from the city of Rotterdam to Groningen, but he needs to pass through some other cities inbetween.
 
@@ -169,50 +180,21 @@ However, he only wants to know which route**s** meet **at least one** of these c
 - If the route is the shortest
 - The distance of the route **is not** divisible by 7 or 11
 
+</v-clicks>
+
 ---
 
 #### Example - Java <logos-java />
 
-```java {monaco-run} {autorun:false}
-public class Main {
-    public static void main(String[] args) {
-        int r_to_a = 65;
-        int r_to_u = 55;
-        int a_to_u = 40;
-        int u_to_a = 40;
-        int a_to_g = 180;
-        int u_to_g = 180;
+<!-- <RenderWhen context="print"> -->
+<span text-sm>
 
-        int path_1 = r_to_a + a_to_g;
-        int path_2 = r_to_u + u_to_g;
-        int path_3 = r_to_a + a_to_u + u_to_g;
-        int path_4 = r_to_u + u_to_a + a_to_g;
-        
-        boolean path_1_valid = isPathValid(path_1, path_2, path_3, path_4)
-        boolean path_2_valid = isPathValid(path_2, path_1, path_3, path_4)
-        boolean path_3_valid = isPathValid(path_3, path_1, path_2, path_4)
-        boolean path_4_valid = isPathValid(path_4, path_1, path_2, path_3)
+<!-- The code below will be cut off by the page during export. -->Please view the full file here: <GitHubFileLink filePath="Distances.java">Distances.java</GitHubFileLink>
 
-        System.out.println("Rotterdam --> Amsterdam --> Groningen: " + path_1_valid)
-        System.out.println("Rotterdam --> Utrecht --> Groningen: " + path_2_valid)
-        System.out.println("Rotterdam --> Amsterdam --> Utrecht --> Groningen: " + path_3_valid)
-        System.out.println("Rotterdam --> Utrecht --> Amsterdam --> Groningen: " + path_4_valid)
-    }
-    
-    public static boolean isPathValid(int main_path, int other_path_a, int other_path_b, int other_path_c) {
-        // This is the main boolean expression that return `true` if the path meets Dijkstra's criteria.
-        return (
-            (main_path <= other_path_a && main_path <= other_path_b && main_path <= other_path_c)
-            || (main_path % 7 != 0 && main_path % 11 != 0)
-        );
-        // There can be multiple ways to write a boolean expression:
-        // return (
-        //     !(main_path > other_path_a || main_path > other_path_b || main_path > other_path_c)
-        //     && !(main_path % 7 == 0 || main_path % 11 == 0)
-        // );
-    }
-}
-```
+</span>
+<!-- </RenderWhen> -->
+
+<<< @/snippets/Distances.java java {monaco-run} {autorun:false, height:'300px', runnerOptions:{file_path:'Distances.java'}}
 
 <!-- 
 Calculate demo manually first.
@@ -223,43 +205,15 @@ Instructor: an on-the-spot drawn map of the cities might help.
 
 #### Example - Python <logos-python />
 
-```python {monaco-run} {autorun:false}
-r_to_a = 65
-r_to_u = 55
-a_to_u = 40
-u_to_a = 40
-a_to_g = 180
-u_to_g = 180
+<!-- <RenderWhen context="print"> -->
+<span text-sm>
 
-path_1 = r_to_a + a_to_g
-path_2 = r_to_u + u_to_g
-path_3 = r_to_a + a_to_u + u_to_g
-path_4 = r_to_u + u_to_a + a_to_g
+<!-- The code below will be cut off by the page during export. -->Please view the full file here: <GitHubFileLink filePath="distances.py">distances.py</GitHubFileLink>
 
-def is_path_valid(main_path, other_path_a, other_path_b, other_path_c):
-    # This is the main boolean expression that return `True` if the path meets Dijkstra's criteria.
-    return (
-        (main_path <= other_path_a and main_path <= other_path_b and main_path <= other_path_c)
-        or (main_path % 7 != 0 and main_path % 11 != 0)
-    )
-    # There can be multiple ways to write a boolean expression:
-    # return (
-    #     not (main_path > other_path_a or main_path > other_path_b or main_path > other_path_c)
-    #     and not (main_path % 7 == 0 or main_path % 11 == 0)
-    # )
+</span>
+<!-- </RenderWhen> -->
 
-path_1_valid = is_path_valid(path_1, path_2, path_3, path_4)
-path_2_valid = is_path_valid(path_2, path_1, path_3, path_4)
-path_3_valid = is_path_valid(path_3, path_1, path_2, path_4)
-path_4_valid = is_path_valid(path_4, path_1, path_2, path_3)
-
-print(f"Rotterdam --> Amsterdam --> Groningen: {path_1_valid}")
-print(f"Rotterdam --> Utrecht --> Groningen: {path_2_valid}")
-print(f"Rotterdam --> Amsterdam --> Utrecht --> Groningen: {path_3_valid}")
-print(f"Rotterdam --> Utrecht --> Amsterdam --> Groningen: {path_4_valid}")
-```
-
-</v-click>
+<<< @/snippets/distances.py python {monaco-run} {autorun:false, height:'300px'}
 
 ---
 
@@ -270,7 +224,7 @@ print(f"Rotterdam --> Utrecht --> Amsterdam --> Groningen: {path_4_valid}")
 - Conditionals allow us to control the flow of execution in our code
   - Use boolean expressions to determine which code should run
   - Made of **if-else statements**
-- For instance: play an animation **if** *the user presses a button, **else** tell the user to press the button
+- For instance: play an animation **if** *the user presses a button*, **else** tell the user to press the button
 
 </v-clicks>
 
@@ -281,10 +235,8 @@ print(f"Rotterdam --> Utrecht --> Amsterdam --> Groningen: {path_4_valid}")
 ```java {monaco-run} {autorun:false}
 public class Main {
     public static void main(String[] args) {
-        int num1 = 3;
-        int num2 = 5;
-        boolean bool1 = true;
-        boolean bool2 = false;
+        int num1 = 3, num2 = 5;
+        boolean bool1 = true, bool2 = false;
         
         // These outer parenthesis "(expr)" are necessary.
         if (num1 < num2) { // Case 1: Runs if num1 < num2.
@@ -354,6 +306,7 @@ else:
   - *for-each* loops
   - *do-while* loops
 - Loops can be stopped by any point by using a `break` statement
+- Loops can jump back to their starting point by using a `continue` statement
 
 </v-clicks>
 
@@ -384,25 +337,25 @@ public class Main {
 ```
 
 </v-click>
-<v-click>
+
+<!-- 
+Fiddle with these example to demonstrate.
+Emphasize that 10 is never printed because the expression evaluates to false.
+-->
+
+---
 
 <logos-python />
 
 ```python {monaco-run} {autorun:false}
 num = 0
 while num < 10:
-    print(f"{num} ", end='')
+    print(num, end=' ')
     num += 1 # Python does not have the prefix increment operator.
     # However, num += 1 is also the same thing as num = num + 1.
     # The += operator also works in Java.
+print()
 ```
-
-</v-click>
-
-<!-- 
-Fiddle with these example to demonstrate.
-Emphasize that 10 is never printed because the expression evaluates to false.
--->
 
 ---
 
@@ -414,13 +367,17 @@ Emphasize that 10 is never printed because the expression evaluates to false.
   - *initialization statement* <carbon-arrow-right /> initializes a variable
     - Often used during the loop
   - *condition* <carbon-arrow-right /> a condition that indicates if the body of the for loop should run (like the `while` loop)
-  - *update statement* <carbon-arrow-right /> a statement that does something at the end of **each loop*
+  - *update statement* <carbon-arrow-right /> a statement that does something at the end of *each loop*
    - Often used to update variables that control the loop
 
 </v-clicks>
 <v-click>
 
 The following examples print the *even integers* from 0 to 20.
+
+</v-click>
+
+---
 
 <logos-java />
 
@@ -431,22 +388,22 @@ public class Main {
         
         // Notice that we use i <= 20 so that i == 20 will be true.
         for (int i = 0; i <= 20; i += 2) { // i += 2 ensures that only even numbers will be calculated.
-            System.out.print(num + " ");
+            System.out.print(i + " ");
         }
     }
 }
 ```
 
-</v-click>
 <v-click>
 
 <logos-python />
 
 ```python {monaco-run} {autorun:false}
 # for-loops in Python are weird. You can just pay attention to how to use them.
-for i in range(20):
+for i in range(21):
     if i % 2 == 0: # If i is even.
-      print(f"{num} ", end='')
+        print(i, end=' ')
+print()
 ```
 
 </v-click>
@@ -476,7 +433,6 @@ The following examples print the elements in an array of strings.
 public class Main {
     public static void main(String[] args) {
         String[] arr = {"Alice", "Bob", "Charlie"};
-        
         for (String s : arr) {
             System.out.print(s + " ");
         }
@@ -491,9 +447,9 @@ public class Main {
 
 ```python {monaco-run} {autorun:false}
 arr = ["Alice", "Bob", "Charlie"]
-
 for s in arr:
-    print(s)
+    print(s, end=' ')
+print()
 ```
 
 </v-click>
@@ -511,7 +467,8 @@ for s in arr:
 - Java has *do-while* loops, but <span v-mark.underline.pink="4">Python does not</span>
 
 </v-clicks>
-<v-click>
+
+---
 
 The following example continuously asks the user to enter "confirm" before executing the rest of the program.
 
@@ -533,8 +490,6 @@ public class Main {
 }
 ```
 
-</v-click>
-
 <!-- Example must be run in an external environment. -->
 
 ---
@@ -552,10 +507,11 @@ public class Main {
     public static void main(String[] args) {
         int num = 0;
         while (true) {
-            System.out.print(num);
+            ++num;
             if (num == 9) {
                 break; // Breaks the loop.
             }
+            System.out.print(num);
             System.out.print(" | ");
         }
         // Execution jumps to here when `break` executes.
@@ -565,21 +521,65 @@ public class Main {
 ```
 
 </v-click>
-<v-click>
+
+---
 
 <logos-python />
 
 ```python {monaco-run} {autorun:false}
 num = 0
 while True:
-    print(num, end='')
+    num += 1
     if num == 9:
         break
-    print(" | ", end='')
+    print(num, end=' ')
+    print(" | ", end=' ')
 print("\nDone")
 ```
 
+---
+
+### `continue` statement
+
+To instruct a loop to jump back to its starting point, use the `continue` statement.
+
+<v-click>
+
+<logos-java />
+
+```java {monaco-run} {autorun:false}
+public class Main {
+    public static void main(String[] args) {
+        int num = 0;
+        while (num < 20) { // This is the "Starting Point".
+            ++num;
+            if (num == 9) {
+                continue; // Causes the loop to jump back to "Starting Point".
+            } // If `continue` executes, then any line below this line will not be run.
+            System.out.print(num);
+            System.out.print(" | ");
+        }
+        // Execution jumps to here when `break` executes.
+        System.out.println("\nDone");
+    }
+}
+```
+
 </v-click>
+
+---
+
+<logos-python />
+
+```python {monaco-run} {autorun:false}
+num = 0
+while num < 20:
+    num += 1
+    if num == 9:
+        continue
+    print(num, end=" | ")
+print("\nDone")
+```
 
 ---
 
@@ -600,11 +600,17 @@ Have a break!
   - *not input string equals "confirm"*
 - The `String` type is a *reference type*
   - Other reference types include *arrays*, the `Scanner`, and any *classes*
-  - <span v-mark.highlight.red="6">We cannot use the equality operator `==` on reference types</span>
+  - <span v-mark.highlight.red="6">We cannot use the equality operator *==* on reference types</span>
 
 </v-clicks>
 
+---
+layout: two-cols-header
+---
+
 ### Variables in Computer Memory
+
+::left::
 
 <v-clicks depth=2>
 
@@ -616,11 +622,10 @@ Have a break!
 - In these systems, each **byte** has an **address** that represents where it is in computer memory
 
 </v-clicks>
-<v-click>
+
+::right::
 
 <Excalidraw drawFilePath="/days/day04/bytes.excalidraw.json" darkMode />
-
-</v-click>
 
 ---
 
@@ -629,12 +634,13 @@ Have a break!
 - *primitive types* like `int`, `double`, `char`, `boolean`:
   - Variable contains data in bytes
 - *reference types* like `String`, `Scanner`, *arrays*, any *classes*:
-  - Variable contains <span v-mark.underline.pink="2">address to data in bytes</span>
-  <span text-sm>(simplification)</span>
+  - Variable contains <span v-mark.underline.pink="2">address to data in bytes</span> <span text-sm>(simplification)</span>
 - **If we use the equality operator `==` on reference types, it compares the addresses, not the data**
 
 </v-clicks>
 
+---
+zoom: 0.7
 ---
 
 <Excalidraw drawFilePath="/days/day04/by_reference.excalidraw.json" darkMode />
@@ -649,8 +655,8 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         // Comparing Strings
-        String s1 = "hello";
-        String s2 = "hello";
+        String s1 = new String("hello");
+        String s2 = new String("hello");
         // Incorrect
         System.out.println(s1 == s2);
         // Correct
@@ -662,8 +668,8 @@ public class Main {
         // Incorrect
         System.out.println(arr1 == arr2);
         // Correct
-        Arrays.equals(arr1, arr2);
-        Arrays.deepEquals(arr1, arr2); // Use for multidimensional arrays.
+        System.out.println(Arrays.equals(arr1, arr2));
+        // System.out.println(Arrays.deepEquals(arr1, arr2)); // Use for multidimensional arrays.
     }
 }
 ```
@@ -677,10 +683,11 @@ public class Main {
 - When passing *arguments* into the *parameters* of a *function*, 
   - The data of *primitive types* is copied
   - The data of *reference types* is **not** copied
-- Example of this:
+- Example on next slide <carbon-arrow-right />
 
 </v-clicks>
-<v-click>
+
+---
 
 ```java {monaco-run} {autorun:false}
 import java.util.Arrays;
@@ -693,7 +700,7 @@ public class Main {
         System.out.println("nums before: " + Arrays.toString(nums));
         System.out.println("num before: " + num);
         System.out.println("myString before: " + myString);
-        doSomething(nums, num);
+        doSomething(nums, num, myString);
         System.out.println("nums after: " + Arrays.toString(nums));
         System.out.println("num after: " + num);
         System.out.println("myString after: " + myString);
@@ -701,25 +708,26 @@ public class Main {
     
     private static void doSomething(int[] arr, int n, String s) {
         arr[1] = 3;
-        num = 5;
+        n = 5;
         s = "Test 2"; // Although strings are a reference type, Java treats them more like primitive type in this context.
     }
 }
 ```
 
-</v-click>
-<v-click>
+---
 
-**Both `nums` and `arr` are references to the same data. Changing one of them will change the other.**  
-`num` and `n` each have their own copy of the data originally in `num`. Changing one of them **will not** change the other. Same with `myString` and `s` <span text-sm>(but this is a special case with strings in Java)</span>
+- **Both `nums` and `arr` are references to the same data. Changing one of them will change the other.**
+- `num` and `n` each have their own copy of the data originally in `num`.
+  - Changing one of them **will not** change the other. 
+  - Same with `myString` and `s` <span text-sm>(but this is a special case with strings in Java)</span>
 
-</v-click>
-
+---
+zoom: 0.75
 ---
 
 ### Examples - Python <logos-python />
 
-In Python, things are weird and it's difficult to explain.  
+In Python, things are very strange and it's difficult to explain.  
 The example below shows how primitive and reference types are treated.
 
 ```python {monaco-run} {autorun:false}
@@ -736,9 +744,7 @@ print(arr1 == arr2) # This also works. The Python interpreter helps us again.
 
 arr3 = [[1, 2, 3], [4, 5, 6]]
 arr4 = [[1, 2, 3], [4, 5, 6]]
-print(arr3 == arr4) # This does not work!
-# The Python interpret will not help you when using multidimensional arrays / lists!
-# It fails to compare the data correctly within the sublists.
+print(arr3 == arr4) # This also works. The Python interpreter helps us again.
 
 def do_something(arr, n, s):
     arr[1] = 3
@@ -749,7 +755,7 @@ nums = [1, 2, 3]
 num = 4
 my_string = "Test 1"
 print(f"Before: {nums=} {num=} {my_string=}")
-do_something()
+do_something(nums, num, my_string)
 print(f"After: {nums=} {num=} {my_string=}")
 ```
 
@@ -797,11 +803,10 @@ How fast would it be if we used a million integers? A billion?
   - $O(1)$ / constant time
 
 </v-clicks>
-<v-click>
+
+---
 
 <Excalidraw drawFilePath="/days/day04/complexity.excalidraw.json" darkMode />
-
-</v-click>
 
 ---
 
@@ -821,6 +826,8 @@ How fast would it be if we used a million integers? A billion?
 
 </v-clicks>
 
+<!-- Important: In subsequent slides, if the size of text becomes too small, copy examples into an external environment which can properly scale the text size. -->
+
 ---
 
 ### `ArrayList`
@@ -831,7 +838,9 @@ An `ArrayList` is a variable-length array:
 
 Learn more here: [docs.oracle.com](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)
 
-<v-click>
+---
+zoom: 0.75
+---
 
 <logos-java />
 
@@ -867,7 +876,8 @@ public class Main {
 }
 ```
 
-</v-click>
+---
+
 <v-clicks depth=3>
 
 - Additional notes:
@@ -877,7 +887,12 @@ public class Main {
     - Adding / removing is a comparatively slow operation
 
 </v-clicks>
-<v-click>
+
+---
+zoom: 0.75
+---
+
+Learn more here: [docs.python.org](https://docs.python.org/3/tutorial/datastructures.html)
 
 <logos-python />
 
@@ -901,10 +916,6 @@ nums.pop(1)
 print(f"Final contents: {nums}, size: {len(nums)}")
 ```
 
-Learn more here: [docs.python.org](https://docs.python.org/3/tutorial/datastructures.html)
-
-</v-click>
-
 <!-- 
 Instructor does not have to work through Python examples manually, as it's largely similar to arrays.
 If time permits, the instructor can opt to explain the internal working of variable-length arrays once the remaining slides for this day are complete.
@@ -919,7 +930,9 @@ A `LinkedList` behaves like an `ArrayList`, but with certain advantages and disa
 
 Learn more here: [docs.oracle.com](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html)
 
-<v-click>
+---
+zoom: 0.65
+---
 
 <logos-java />
 
@@ -937,6 +950,11 @@ public class Main {
         
         // Get an element at a specific index in the linked-list.
         int element = nums.get(2); // Gets the integer at index 2 --> 6
+        System.out.println(element);
+        // Other methods.
+        element = nums.getFirst();
+        System.out.println(element);
+        element = nums.getLast();
         System.out.println(element);
         
         // Add an element to the beginning and end of the linked-list.
@@ -960,7 +978,8 @@ public class Main {
 }
 ```
 
-</v-click>
+---
+
 <v-clicks depth=3>
 
 - Additional notes:
@@ -968,7 +987,7 @@ public class Main {
   - `get` runs on $O(n)$ / linear time
     - <span v-mark.underline.pink="4">This is **slower** than `ArrayList`!</span>
   - `add` and `remove` run on average $O(n)$ / linear time
-  - `addFirst`, `addLast`, `removeFirst`, `removeLast` run on $O(1)$ / constant time
+  - `addFirst`, `addLast`, `removeFirst`, `removeLast`, `getFirst`, and `getLast` run on $O(1)$ / constant time
     - <span v-mark.underline.pink="7">This is **faster** than `ArrayList`!</span>
 - Prefer to use `LinkedList` over `ArrayList` when frequently adding / removing elements at the start / end of the data structure.
 
@@ -1002,6 +1021,12 @@ Learn more here: [docs.oracle.com](https://docs.oracle.com/javase/8/docs/api/jav
 <v-click>
 
 Let's say that a group of friends are playing the board game Monopoly, and they want to use a program to keep track of their cash balance in the game.
+
+</v-click>
+
+---
+zoom: 0.75
+---
 
 <logos-java />
 
@@ -1037,7 +1062,8 @@ public class Main {
 }
 ```
 
-</v-click>
+---
+
 <v-clicks depth=3>
 
 - Additional notes:
@@ -1045,46 +1071,46 @@ public class Main {
   - The hashmap is a very efficient data structure
 
 </v-clicks>
-<v-click>
 
-In Python, hashmaps are called *dictionaries*.
+---
+zoom: 0.72
+---
+
+In Python, hashmaps are called *dictionaries*.  
+Learn more here: [docs.python.org](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
 
 <logos-python />
 
 ```python {monaco-run} {autorun:false}
-map = dict()
+players = dict()
 
 # Or, create a dictionary with some initial data.
-# map = {
+# players = {
 #     "Alice": 100,
 #     "Bob": 200,
 #     "Charlie": 150
 # }
 
 # Add / change a key-value pair.
-map["Alice"] = 2000
-map["Bob"] = 1900
-map["Charlie"] = 1950
+players["Alice"] = 2000
+players["Bob"] = 1900
+players["Charlie"] = 1950
 
-map["Alice"] = 3000 # Changes the Alice's existing balance.
+players["Alice"] = 3000 # Changes the Alice's existing balance.
 
-# Check if the map has a specific key.
-hasAlice = "Alice" in map
-hasDennis = "Dennis" in map
+# Check if the players has a specific key.
+hasAlice = "Alice" in players
+hasDennis = "Dennis" in players
 print("Contains Alice:", hasAlice)
 print("Contains Dennis:", hasDennis)
 
 # Get a value associated with a key.
-print("Alice's Balance: " + map.get("Alice"))
-print("Dennis's Balance: " + map.get("Dennis")) # `None` since Dennis is not in the map.
+print("Alice's Balance: ", players.get("Alice"))
+print("Dennis's Balance: ", players.get("Dennis")) # `None` since Dennis is not in the players.
 # `None` is the equivalent of `null` in Python.
 
-print(f"Final contents: {map}, key-value pairs: {len(map)}")
+print(f"Final contents: {players}, key-value pairs: {len(players)}")
 ```
-
-Learn more here: [docs.python.org](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
-
-</v-click>
 
 <!-- If time permits, the instructor can opt to explain the internal working of hashmaps once the remaining slides for this day are complete. -->
 
@@ -1095,3 +1121,7 @@ Learn more here: [docs.python.org](https://docs.python.org/3/tutorial/datastruct
 [Click here to access the worksheet.](worksheets/worksheet04/worksheet04.pdf)
 
 [Click here to access the answer key.](worksheets/worksheet04/answers04.pdf)
+
+[Bonus worksheet (one question, if you're willing).](worksheets/worksheet04/bonus04.pdf)
+
+[Bonus worksheet answer key.](worksheets/worksheet04/bonus_answers04.pdf)
