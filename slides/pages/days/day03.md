@@ -20,11 +20,7 @@ transition: slide-left
 
 ::right::
 
-<Transform scale=0.9>
-
 <Toc minDepth=2 maxDepth=3 mode="onlyCurrentTree" />
-
-</Transform>
 
 <!-- Next slide contains a review of declaring arrays and strings. -->
 
@@ -220,6 +216,10 @@ print(c)
 hideInToc: true
 ---
 
+<!-- The Slidev Toc component is a bit bugged, so we need an empty header here. -->
+
+### 
+
 - We can also use indices to get a specific part of a string
 
 <v-click>
@@ -377,6 +377,8 @@ Have a break!
 <!-- It's okay if younger students haven't learned mathematical functions yet. -->
 
 ---
+hideInToc: true
+---
 
 ### Example 1 - Java <logos-java />
 
@@ -500,6 +502,8 @@ We won't break it down since it makes for a good worksheet exercise.
 -->
 
 ---
+hideInToc: true
+---
 
 ### Example 2 - Java <logos-java />
 
@@ -522,6 +526,8 @@ $$
 
 <!-- Arguments start with the radii, then are passed down as the areas and circumferences. -->
 
+---
+hideInToc: true
 ---
 
 ### Examples - Python <logos-python />

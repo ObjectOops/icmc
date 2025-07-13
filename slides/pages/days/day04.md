@@ -21,7 +21,11 @@ transition: slide-left
 
 ::right::
 
+<Transform scale=0.7>
+
 <Toc minDepth=2 maxDepth=3 mode="onlyCurrentTree" />
+
+</Transform>
 
 ---
 src: day03.md#4-5,23
@@ -64,6 +68,10 @@ src: day03.md#4-5,23
 ---
 hideInToc: true
 ---
+
+<!-- The Slidev Toc component is a bit bugged, so we need an empty header here. -->
+
+#### 
 
 ```python {monaco-run} {autorun:false}
 num1 = 5
@@ -229,6 +237,8 @@ Instructor: an on-the-spot drawn map of the cities might help.
 </v-clicks>
 
 ---
+hideInToc: true
+---
 
 #### Example - Java <logos-java />
 
@@ -378,6 +388,12 @@ The following examples print the *even integers* from 0 to 20.
 </v-click>
 
 ---
+hideInToc: true
+---
+
+<!-- The Slidev Toc component is a bit bugged, so we need an empty header here. -->
+
+#### 
 
 <logos-java />
 
@@ -646,6 +662,8 @@ zoom: 0.7
 <Excalidraw drawFilePath="/days/day04/by_reference.excalidraw.json" darkMode />
 
 ---
+hideInToc: true
+---
 
 ### Example 1 - Java <logos-java />
 
@@ -674,6 +692,8 @@ public class Main {
 }
 ```
 
+---
+hideInToc: true
 ---
 
 ### Example 2 - Java <logos-java />
@@ -723,6 +743,7 @@ public class Main {
 
 ---
 zoom: 0.75
+hideInToc: true
 ---
 
 ### Examples - Python <logos-python />
@@ -890,7 +911,12 @@ public class Main {
 
 ---
 zoom: 0.75
+hideInToc: true
 ---
+
+<!-- The Slidev Toc component is a bit bugged, so we need an empty header here. -->
+
+#### 
 
 Learn more here: [docs.python.org](https://docs.python.org/3/tutorial/datastructures.html)
 
@@ -1074,7 +1100,12 @@ public class Main {
 
 ---
 zoom: 0.72
+hideInToc: true
 ---
+
+<!-- The Slidev Toc component is a bit bugged, so we need an empty header here. -->
+
+#### 
 
 In Python, hashmaps are called *dictionaries*.  
 Learn more here: [docs.python.org](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)
