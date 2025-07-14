@@ -19,7 +19,7 @@ info: |
 author: Alex Yao
 presenter: true
 browserExporter: dev
-download: false
+download: ./media/export.pdf
 lineNumbers: true
 remoteAssets: build
 record: true

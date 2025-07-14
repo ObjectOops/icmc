@@ -441,7 +441,7 @@ Have a break!
 
 > <span text-sm>Instructor Guided</span>
 
-<Excalidraw drawFilePath="/days/day02/debugging.excalidraw.json" darkMode />
+<Excalidraw drawFilePath="./days/day02/debugging.excalidraw.json" darkMode />
 
 <!-- Instructor should perform interactive guide in external environment. -->
 

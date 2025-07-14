@@ -41,7 +41,7 @@ Toronto, Russia or Canada
 
 6. Use the following Python program to create a **truth table** for the XOR (exclusive OR) operator.
 
-<Excalidraw drawFilePath="/xor.excalidraw.json" />
+<Excalidraw drawFilePath="./xor.excalidraw.json" />
 
 7. What is the output of the following program?
 

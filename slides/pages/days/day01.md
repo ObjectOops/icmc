@@ -34,25 +34,14 @@ Message us on Discord or send an email to the following addresses:
 <!-- We'll be using two programming languages. Transitioning from Python to Java, but still including Python. -->
 
 ---
-layout: two-cols-header
----
 
 ## Resources
 
-Bookmark this slides presentation to following along!  
-<PageURL />
+Bookmark this slide presentation to following along!  
+<!-- <PageURL /> -->
 
 Helpful cheatsheets to reference:
-- <Link to="unavailable">Java Cheatsheet</Link>
-- <Link to="unavailable">Python Cheatsheet</Link>
-
-::left::
-
-<iframe src="unavailable" />
-
-::right::
-
-<iframe src="unavailable" />
+- [Java Cheatsheet](media/java_cheatsheet.pdf)
 
 ---
 
@@ -134,7 +123,7 @@ Helpful cheatsheets to reference:
 
 <Transform scale=1.3>
 
-<Excalidraw drawFilePath="/days/day01/using_binder.excalidraw.json" darkMode />
+<Excalidraw drawFilePath="./days/day01/using_binder.excalidraw.json" darkMode />
 
 </Transform>
 
@@ -242,7 +231,7 @@ hideInToc: true
 
 ## Explanation
 
-<Excalidraw drawFilePath="/days/day01/run_steps.excalidraw.json" darkMode />
+<Excalidraw drawFilePath="./days/day01/run_steps.excalidraw.json" darkMode />
 
 ---
 hideInToc: true
@@ -289,7 +278,7 @@ routeAlias: keyboard_map
 
 ## Keyboard Map
 
-<Excalidraw drawFilePath="/days/day01/keyboard_map.excalidraw.json" darkMode />
+<Excalidraw drawFilePath="./days/day01/keyboard_map.excalidraw.json" darkMode />
 
 ---
 
@@ -394,7 +383,7 @@ print("Name:", name, "Friends:", friends)
 
 <logos-java />
 
-<Excalidraw drawFilePath="/days/day01/variables_summary.excalidraw.json" darkMode />
+<Excalidraw drawFilePath="./days/day01/variables_summary.excalidraw.json" darkMode />
 
 ---
 

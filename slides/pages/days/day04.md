@@ -687,7 +687,7 @@ layout: two-cols-header
 
 ::right::
 
-<Excalidraw drawFilePath="/days/day04/bytes.excalidraw.json" darkMode />
+<Excalidraw drawFilePath="./days/day04/bytes.excalidraw.json" darkMode />
 
 ---
 
@@ -705,7 +705,7 @@ layout: two-cols-header
 zoom: 0.7
 ---
 
-<Excalidraw drawFilePath="/days/day04/by_reference.excalidraw.json" darkMode />
+<Excalidraw drawFilePath="./days/day04/by_reference.excalidraw.json" darkMode />
 
 ---
 hideInToc: true
@@ -873,7 +873,7 @@ How fast would it be if we used a million integers? A billion?
 
 ---
 
-<Excalidraw drawFilePath="/days/day04/complexity.excalidraw.json" darkMode />
+<Excalidraw drawFilePath="./days/day04/complexity.excalidraw.json" darkMode />
 
 ---
 

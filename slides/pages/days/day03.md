@@ -121,7 +121,7 @@ Elements in an array are sequentially stored with incremental indices.
 int[] nums = {5, 10, 15, 20};
 ```
 
-<Excalidraw drawFilePath="/days/day03/arrays_1.excalidraw.json" darkMode />
+<Excalidraw drawFilePath="./days/day03/arrays_1.excalidraw.json" darkMode />
 
 ---
 
@@ -176,7 +176,7 @@ int[][] matrix = {
 
 ::right::
 
-<Excalidraw drawFilePath="/days/day03/arrays_2.excalidraw.json" darkMode />
+<Excalidraw drawFilePath="./days/day03/arrays_2.excalidraw.json" darkMode />
 
 ---
 
@@ -630,7 +630,7 @@ pi = 3.14159
 
 <Transform scale=0.9>
 
-<Excalidraw drawFilePath="/days/day03/functions.excalidraw.json" darkMode />
+<Excalidraw drawFilePath="./days/day03/functions.excalidraw.json" darkMode />
 
 </Transform>
 
