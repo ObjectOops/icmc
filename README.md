@@ -5,4 +5,4 @@ ___
 
 The following Binder link is intended for opening a Java + Python environment in `workbench`.
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ObjectOops/icmc/HEAD?urlpath=vscode)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ObjectOops/icmc/binder?urlpath=vscode)

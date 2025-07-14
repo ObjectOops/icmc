@@ -33,7 +33,7 @@ drawings:
   persist: true
 date: 2025-07-28
 timezone: -05:00
-startupLink: https://mybinder.org/v2/gh/ObjectOops/icmc/HEAD?urlpath=vscode
+startupLink: https://mybinder.org/v2/gh/ObjectOops/icmc/binder?urlpath=vscode
 githubSnippets: https://github.com/ObjectOops/icmc/blob/main/slides/snippets
 
 src: pages/title.md
