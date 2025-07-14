@@ -14,6 +14,7 @@ transition: slide-left
 - String Manipulation
 - Basic Escape Sequences
 - *Break*
+- Function Scope
 - Defining Functions
 - Intro to Classes
 - *Worksheet*
@@ -351,10 +352,12 @@ Have a break!
 <RandomPicture />
 
 ---
+zoom: 0.85
+---
 
 ## Functions / Methods
 
-<v-clicks depth=2>
+<v-clicks depth=3>
 
 - A **function**, also called a **method**, is a block of code that can be reused in varying contexts
   - This definition is unclear; let's see some examples
@@ -371,6 +374,7 @@ Have a break!
   - *parameters*
   - *definition*
     - Might include: *return value* (if *return type* is not `void`)
+    - **Function scope**: Variables declared inside a function can only be used inside that function!
 
 </v-clicks>
 
@@ -481,6 +485,7 @@ public class Main {
     
     private static String prompt(int num) {
         System.out.println("Enter name #" + num);
+/* Important!: `name` has "function scope". It can only be used inside the `prompt` function! */
         String name = scan.nextLine();
         return name;
     }
@@ -496,6 +501,7 @@ Explain each part of function definition, including return value.
 > Will learn more about access modifers later!
 > Arguments are 1, 2, 3, 4.
 Explain the global variable.
+Lastly, briefly explain that the `name` variable in the method is confined to the method's scope. It will go out of scope and become unavailable when the method concludes.
 
 Inform students that the main method is also a function, just a special one.
 We won't break it down since it makes for a good worksheet exercise.

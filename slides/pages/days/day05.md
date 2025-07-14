@@ -143,7 +143,9 @@ layout: two-cols-header
 ```java {monaco-run} {autorun:false, runnerOptions:{entrypoint:false, file_path:'MyClass.java'}}
 package package1; // Package #1
 
-public class MyClass { // `MyClass` is the top-level public class of `MyClass.java`
+// `MyClass` is the top-level public class of 
+// `MyClass.java`
+public class MyClass {
     public static void foo() {
         System.out.println("Foo");
     }
@@ -155,8 +157,10 @@ public class MyClass { // `MyClass` is the top-level public class of `MyClass.ja
     }
 }
 
-class SecondClass { // `SecondClass` is top-level, but not public.
-    public static void baz() { // It cannot be accessed outside the package1 package.
+// `SecondClass` is top-level, but not public.
+// It cannot be accessed outside the `package1` package.
+class SecondClass {
+    public static void baz() {
         System.out.println("Baz");
     }
 }
@@ -179,7 +183,8 @@ public class Main {
         MyClass myObject = new MyClass();
         myObject.bar();
         
-        // We cannot access this class because it is not top-level public.
+        // We cannot access this class 
+        // because it is not top-level public.
         // SecondClass.baz();
     }
 }
@@ -213,4 +218,109 @@ Have a break!
 
 ---
 
+## Exceptions
 
+<v-clicks depth=2>
+
+- An **exception** is a type of event that disrupts the execution of a program
+- **Exceptions** are often used to indicate that a problem occurred in the program  
+For example:
+  - Array index out of bounds
+  - Divide by zero
+  - Trying to use an object with value `null`
+  - Incorrect usage of a function
+  - etc.
+- *By default*, when an **exception** occurs, it will stop a program immediately (*termination*)
+  - We can **catch** exceptions to prevent the program from *terminating*
+  - We can create / **throw** our own exceptions
+- We will only be covering exceptions in Java, but note that Python also has exceptions
+
+</v-clicks>
+
+---
+hideInToc: true
+---
+
+### Example
+
+Examples of common exceptions in Java.
+
+```java {monaco-run} {autorun:false}
+public class Main {
+    public static void main(String[] args) throws Exception {
+        // ArrayIndexOutOfBoundsException
+        int[] nums = {1, 2, 3};
+        System.out.println(nums[10]); // Index 10 is out-of-bounds.
+        
+        // ArithmeticException
+        int n = 10 / 0; // Dividing by 0 is illegal.
+        
+        // NullPointerException
+        String s = null;
+        s.length(); // Don't use an object which is `null`.
+        
+        // Your own exception!
+        throw new Exception("MY EXCEPTION");
+    }
+}
+```
+
+<!-- Run this example with various exceptions. Note the kinds of exceptions that appear in the output. -->
+
+---
+
+## Handling Exceptions
+
+<v-clicks>
+
+- By *handling* an exception, you are instructing the program to do something else instead of *terminating*
+- Put the code that can throw exception(s) inside a `try` block
+- If an exception is occurs / *thrown*, execution will jump to the start of a `catch` block
+- There is also a `finally` block, but we will not cover it
+
+</v-clicks>
+
+---
+hideInToc: true
+zoom: 0.85
+---
+
+### Example
+
+```java {monaco-run} {autorun:false}
+public class Main {
+    public static void main(String[] args) {
+        
+        // Start of the `try` block!
+        try {
+            
+            // ArrayIndexOutOfBoundsException
+            int[] nums = {1, 2, 3};
+            System.out.println(nums[10]); // Index 10 is out-of-bounds.
+            
+            // ArithmeticException
+            int n = 10 / 0; // Dividing by 0 is illegal.
+            
+            // NullPointerException
+            String s = null;
+            s.length(); // Don't use an object which is `null`.
+            
+            // Your own exception!
+            throw new Exception("MY EXCEPTION");
+        
+        // End of the `try` block. Start of the `catch` block!
+        } catch (Exception e) {
+            System.out.println("A problem occurred!");
+            
+            // You can also print the details of the exception.
+            System.out.println(e.toString());
+        }
+    }
+}
+```
+
+---
+
+## Worksheet
+
+No worksheet today!

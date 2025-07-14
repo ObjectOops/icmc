@@ -11,6 +11,7 @@ transition: slide-left
 
 - Review arrays and functions
 - Boolean Expressions
+- Block Scope
 - Conditionals
 - Loops
 - *Break*
@@ -21,7 +22,7 @@ transition: slide-left
 
 ::right::
 
-<Transform scale=0.7>
+<Transform scale=0.65>
 
 <Toc minDepth=2 maxDepth=3 mode="onlyCurrentTree" />
 
@@ -225,6 +226,49 @@ Instructor: an on-the-spot drawn map of the cities might help.
 
 ---
 
+## Block Scope
+
+<v-clicks depth=2>
+
+- Earlier, we covered **function scope**
+  - <span text-sm>Variables declared in a function can only be used inside that function</span>
+- In programming, we use **blocks** to separate code
+  - In Java, each set of curly braces (`{}`) defines its own **block**
+  - In Python, the colon (`:`) and indentation (empty space that appears before code on a line of code) defines a **block**
+- **block scope**: <span v-mark.highlight.red="6">Variables declared inside a block can only be used inside that block, or subblocks</span>
+- When a variable is no longer accessible because its **block** has been completely executed, we say that the variable is "*out-of-scope*"
+
+</v-clicks>
+
+---
+hideInToc: true
+---
+
+### Example
+
+```java {monaco-run} {autorun:false}
+public class Main {
+    public static void main(String[] args) {
+        {
+            int num = 5;
+        }
+        System.out.println("num: " + num); // Fails: `num` is "out-of-scope". It is in a different block
+        
+        {
+            int num = 6; // We can re-declare `num` since the old one is now "out-of-scope".
+            {
+                System.out.println("num: " + num);
+                // Succeeds: The print statement is inside a subblock, which can access its "parent block"
+            }
+        }
+    }
+}
+```
+
+<!-- This may require additional elaboration by the instructor as it's a concept requiring a degree of intuition. -->
+
+---
+
 ## Conditionals
 
 <v-clicks depth=2>
@@ -232,6 +276,7 @@ Instructor: an on-the-spot drawn map of the cities might help.
 - Conditionals allow us to control the flow of execution in our code
   - Use boolean expressions to determine which code should run
   - Made of **if-else statements**
+  - Each **if-else statement** is its own **block**
 - For instance: play an animation **if** *the user presses a button*, **else** tell the user to press the button
 
 </v-clicks>
@@ -317,6 +362,7 @@ else:
   - *do-while* loops
 - Loops can be stopped by any point by using a `break` statement
 - Loops can jump back to their starting point by using a `continue` statement
+- Each loop is its own **block**
 
 </v-clicks>
 
