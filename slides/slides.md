@@ -64,9 +64,25 @@ src: pages/days/day05.md
 ---
 
 ---
-src: pages/unavailable.md
+src: pages/days/day06.md
 ---
 
 ---
-# src: pages/reference.md
+src: pages/days/day07.md
+---
+
+---
+src: pages/days/day08.md
+---
+
+---
+src: pages/days/day09.md
+---
+
+---
+src: pages/days/day10.md
+---
+
+---
+src: pages/unavailable.md
 ---

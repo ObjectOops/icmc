@@ -13,6 +13,10 @@ transition: slide-left
 - *Break*
 - Exception Handling
 - *No worksheet today*
+- Projects Overview
+- Saving progress from Binder
+- Replit
+- Additional Topics Overview
 
 ::right::
 
@@ -314,6 +318,7 @@ public class Main {
             
             // You can also print the details of the exception.
             System.out.println(e.toString());
+            System.out.println(e.getMessage());
         }
     }
 }
@@ -324,3 +329,78 @@ public class Main {
 ## Worksheet
 
 No worksheet today!
+
+<!-- There is another slide after this one! -->
+
+---
+
+## Projects
+
+- The next week of content will cover niche topics
+- There will be no more worksheets
+- **Get into a group to brainstorm project ideas, or *solo it***
+
+---
+routeAlias: binder_saving
+---
+
+## Saving progress from Binder
+
+**Binder does not save your data for you. Follow these steps to save your files.**
+
+### Downloading
+
+To download your files from Binder:
+
+1. In the terminal (the box where your program outputs to), run the command `zip -r workbench.zip .`  
+<span text-sm>Don't forget the ".", it's a part of the command</span>
+2. In the file explorer (the list of files on the left), right-click / two-finger-click on the file `workbench.zip`. Then, click "Download..." to download the file.  
+
+### Uploading
+
+To upload your files to Binder:
+
+1. Right-click in an empty space inside the file explorer. Then click "Upload..." and upload your `workbench.zip` file that you previously downloaded.
+2. In the terminal, run the command `unzip -o workbench.zip`. Your files have been restored!
+3. Delete the file `workbench.zip`.
+
+<!-- 
+Demonstrate the saving process.
+Optionally, demonstrate the janky multiplayer functionality via the preinstalled extension.
+-->
+
+---
+
+## Replit
+
+Create a Replit account at [replit.com](https://replit.com/).
+
+> Replit gives you 1200 minutes per month of usage. **Use it wisely.**
+> You also have a limit of 1 collaborator.
+
+<!-- Instructor(s) should assist with Replit account setup. Optionally, demonstrate collaborator functionality. -->
+
+---
+
+## Additional Topics Overview
+
+- <Link to="time">Time & Random</Link> - Work with time and generate random numbers
+- <Link to="ansi_escape_sequences">Basic ANSI Escape Sequences</Link> - <span class="colorful">Give your text-based programs colors, **other** *styles*</span>, clear the screen, and move the cursor
+- <Link to="file_io">File I/O</Link> - Read and write to files to store data
+- <Link to="turtle">Turtle</Link> - Use Python to draw colorful spirals
+- <Link to="lambdas">Lambdas / Anonymous Functions</Link> - Assign functions to variables and call variables as functions
+- <Link to="multithreading">Multithreading</Link> - Run multiple functions at the same time
+
+<style>
+.colorful {
+  background: linear-gradient(to right, pink, red, blue, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+</style>
+
+<!-- 
+Students should "vote" on which topics they find interesting. Topics do not have to be completed in the suggested order that this content was designed with.
+If a students requests it, the instructor should be prepared to develop an ad hoc example to show demonstrate the equivalent topic in Python.
+-->

@@ -1121,11 +1121,11 @@ public class Main {
         
         // Check if the map has a specific key.
         System.out.println("Contains Alice: " + map.containsKey("Alice"));
-        System.out.println("Contains Dennis: " + map.containsKey("Dennis"));
+        System.out.println("Contains Dave: " + map.containsKey("Dave"));
         
         // Get a value associated with a key.
         System.out.println("Alice's Balance: " + map.get("Alice"));
-        System.out.println("Dennis's Balance: " + map.get("Dennis")); // `null` since Dennis is not in the map.
+        System.out.println("Dave's Balance: " + map.get("Dave")); // `null` since Dave is not in the map.
         
         // Get the number of key-value pairs in the hashmap.
         int count = map.size();
@@ -1177,13 +1177,13 @@ players["Alice"] = 3000 # Changes the Alice's existing balance.
 
 # Check if the players has a specific key.
 hasAlice = "Alice" in players
-hasDennis = "Dennis" in players
+hasDave = "Dave" in players
 print("Contains Alice:", hasAlice)
-print("Contains Dennis:", hasDennis)
+print("Contains Dave:", hasDave)
 
 # Get a value associated with a key.
 print("Alice's Balance: ", players.get("Alice"))
-print("Dennis's Balance: ", players.get("Dennis")) # `None` since Dennis is not in the players.
+print("Dave's Balance: ", players.get("Dave")) # `None` since Dave is not in the players.
 # `None` is the equivalent of `null` in Python.
 
 print(f"Final contents: {players}, key-value pairs: {len(players)}")

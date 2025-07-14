@@ -1,0 +1,67 @@
+---
+layout: two-cols
+transition: slide-left
+---
+
+# <DateTitle offset=8 />
+
+<StartupBadge />
+
+**Agenda**
+
+- File I/O
+- *Break*
+
+::right::
+
+<Toc minDepth=2 maxDepth=3 mode="onlyCurrentTree" />
+
+---
+
+## File I/O
+
+The following example demonstrates creating a file, writing to the file, adding to the file, and finally reading from the file.
+
+```java {monaco-run} {autorun:false}
+import java.io.FileWriter;
+
+public class Main {
+    public static void main(String[] args) {
+        String fileName = "example.txt";
+
+        // Creating and writing to the file.
+        try {
+            FileWriter writer = new FileWriter(fileName);
+            writer.write("This is the first line.\n");
+            
+            System.out.println("File created and initial content written.");
+        } catch (IOException e) {
+            System.out.println("Error writing to file: " + e.getMessage());
+        }
+
+        // Appending to the file.
+        try {
+            FileWriter writer = new FileWriter(fileName, true);
+            writer.write("This is an appended line.\n");
+            
+            System.out.println("Additional content appended.");
+        } catch (IOException e) {
+            System.out.println("Error appending to file: " + e.getMessage());
+        }
+
+        // Reading from the file.
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            
+            String line;
+            System.out.println("Reading from file:");
+            
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.out.println("Error reading from file: " + e.getMessage());
+        }
+    }
+}
+```

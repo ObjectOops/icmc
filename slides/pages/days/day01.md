@@ -69,7 +69,7 @@ Helpful cheatsheets to reference:
 
 | <DateTitle offset=7 /> | <DateTitle offset=8 /> | <DateTitle offset=9 /> | <DateTitle offset=10 /> | <DateTitle offset=11 /> |
 | :---: | :---: | :---: | :---: | :---: |
-| ANSI Escape Sequences | Lambdas, File I/O | Time, Networking | GUIs, Multithreading | Project Presentations |
+| Time & Random, ANSI Escape Sequences | File I/O | Turtle, Lambdas | Multithreading | Project Presentations |
 
 <v-click>
 
@@ -120,6 +120,8 @@ Helpful cheatsheets to reference:
   4. [JupyterLite](https://jupyterlite.rtfd.io/en/stable/try/lab) (Python)
 
 </div>
+
+<Link to="binder_saving">How to save your files from Binder</Link>
 
 </v-clicks>
 
@@ -379,7 +381,7 @@ public class Main {
 
 ```python {monaco-run} {autorun:false}
 name = "Alice"
-friends = ["Bob", "Charlie", "Dennis"]
+friends = ["Bob", "Charlie", "Dave"]
 print("Name:", name, "Friends:", friends)
 ```
 
