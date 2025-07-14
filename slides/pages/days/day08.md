@@ -18,6 +18,9 @@ transition: slide-left
 <Toc minDepth=2 maxDepth=3 mode="onlyCurrentTree" />
 
 ---
+routeAlias: turtle
+zoom: 0.9
+---
 
 ## Turtle
 
@@ -54,6 +57,8 @@ turtle.done()
 <!-- This example requires a GUI. -->
 
 ---
+routeAlias: lambdas
+---
 
 ## Lambdas
 
@@ -64,9 +69,9 @@ The following Java example shows how to use lambdas.
 public class Main {
     public static void main(String[] args) {
         MyRunnableLambda[] arrayOfLambdas = {
-            (f, l, a) -> { System.out.println(l + ", " + f + " is " + a + " years old.") }, 
-            (f, l, a) -> { System.out.println(f + " " + l + " is " + a + " years old.") }, 
-            (f, l, a) -> { System.out.println("Somebody is " + a + " years old.") }
+            (f, l, a) -> { System.out.println(l + ", " + f + " is " + a + " years old."); }, 
+            (f, l, a) -> { System.out.println(f + " " + l + " is " + a + " years old."); }, 
+            (f, l, a) -> { System.out.println("Somebody is " + a + " years old."); }
         };
         
         int lambdaToUse = 0;
@@ -77,6 +82,6 @@ public class Main {
 
 @FunctionalInterface
 interface MyRunnableLambda {
-    int run(String firstName, String lastName, int age);
+    void run(String firstName, String lastName, int age);
 }
 ```

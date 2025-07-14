@@ -17,14 +17,21 @@ transition: slide-left
 <Toc minDepth=2 maxDepth=3 mode="onlyCurrentTree" />
 
 ---
+routeAlias: multithreading
+---
 
 ## Multithreading
 
 The following example creates two threads.  
 You can think of a thread as a task the program tries to do at the same time as other tasks.  
-The threads in this example each print numbers independently of each other.
+The threads in this example each print numbers independently of each other.  
+<carbon-arrow-right />
 
-```java {monaco-run} {autorun:false}
+---
+zoom: 0.8
+---
+
+```java
 public class Main {
     public static void main(String[] args) {
         System.out.println("Starting threads...");
@@ -37,8 +44,12 @@ public class Main {
 
         System.out.println("Threads started!");
         
-        t1.join(); // Wait for Thread A to complete.
-        t2.join(); // Wait for Thread B too.
+        try {
+            t1.join(); // Wait for Thread A to complete.
+            t2.join(); // Wait for Thread B too.
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
 
@@ -56,3 +67,13 @@ class MyThread extends Thread {
     }
 }
 ```
+
+<!-- Run example in external environment. -->
+
+---
+
+## Tomorrow
+
+Share your projects with us!  
+We will be presenting them tomorrow.  
+If you don't want to share or aren't done yet, that's okay too.

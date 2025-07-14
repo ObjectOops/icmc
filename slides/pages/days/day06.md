@@ -78,6 +78,7 @@ public class Main {
 
 ---
 routeAlias: ansi_escape_sequences
+zoom: 0.7
 ---
 
 ## Basic ANSI Escape Sequences
@@ -89,7 +90,7 @@ Adding colors and styles: [en.wikipedia.org](https://en.wikipedia.org/wiki/ANSI_
 ```java
 public class Main {
     public static void main(String[] args) {
-        String CSI = "\033["
+        String CSI = "\033[";
         
         // Clear the terminal / screen.
         System.out.print(CSI + "H" + CSI + "J");
@@ -109,12 +110,14 @@ public class Main {
         
         // Set background / highlight color.
         System.out.println(CSI + "44m" + "Colorful text 2.");
-        
+
+        // Clear all colors and styles.
+        System.out.println(CSI + "0m");
+
         // Set text to a color (advanced).
         System.out.println(CSI + "38;2;25;210;75m" + "Colorful text 3."); // Text
         System.out.println(CSI + "48;2;20;225;225m" + "Colorful text 4."); // Background / Highlight
         
-        // Clear all colors and styles.
         System.out.println(CSI + "0m");
     }
 }

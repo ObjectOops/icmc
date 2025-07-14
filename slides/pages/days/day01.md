@@ -30,7 +30,6 @@ transition: slide-left
 
 Message us on Discord or send an email to the following addresses:
 - <code><Obfuscate ob="aW93YWNpdHltYXRoY2lyY2xlQGdtYWlsLmNvbQo=" /></code>
-<!-- - <code><Obfuscate ob="YWxleHlhbzJAaWxsaW5vaXMuZWR1Cg==" /></code> -->
 
 <!-- We'll be using two programming languages. Transitioning from Python to Java, but still including Python. -->
 

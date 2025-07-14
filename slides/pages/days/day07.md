@@ -17,13 +17,23 @@ transition: slide-left
 <Toc minDepth=2 maxDepth=3 mode="onlyCurrentTree" />
 
 ---
+routeAlias: file_io
+---
 
 ## File I/O
 
-The following example demonstrates creating a file, writing to the file, adding to the file, and finally reading from the file.
+The following example demonstrates creating a file, writing to the file, adding to the file, and finally reading from the file.  
+<carbon-arrow-right />
 
-```java {monaco-run} {autorun:false}
+---
+zoom: 0.65
+---
+
+```java
 import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.FileReader;
 
 public class Main {
     public static void main(String[] args) {
@@ -65,3 +75,5 @@ public class Main {
     }
 }
 ```
+
+<!-- Copy and run in external environment. -->

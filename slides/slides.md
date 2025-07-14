@@ -84,5 +84,9 @@ src: pages/days/day10.md
 ---
 
 ---
+src: pages/thank_you.md
+---
+
+---
 src: pages/unavailable.md
 ---
