@@ -38,7 +38,7 @@ Message us on Discord or send an email to the following addresses:
 ## Resources
 
 Bookmark this slide presentation to following along!  
-<!-- <PageURL /> -->
+<PageURL />
 
 Helpful cheatsheets to reference:
 - [Java Cheatsheet](media/java_cheatsheet.pdf)
