@@ -21,7 +21,7 @@ Possible answers:
 
 </span>
 
-2. In Java, write a program that asks for the user's name, then echo their name back.  
+2. In Java, write a program that asks for the user's name, then repeats their name back to them.  
 
 ```java
 import java.util.Scanner;

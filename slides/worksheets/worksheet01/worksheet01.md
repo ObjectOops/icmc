@@ -12,11 +12,11 @@ drawings:
 1. What differences have you noticed between Java and Python so far?  
 Use your own words. Feel free to use the internet to search.
 
-2. In Java, write a program that asks for the user's name, then echo their name back.  
-Example:
+2. In Java, write a program that asks for the user's name, then repeats their name back to them.  
+Example input / output:
 ```
-Enter your name: John
-Your name is: John
+Enter your name: <user enters their name here>
+Your name is: <program repeats the name here>
 ```
 
 3. Rewrite the program described above in Python.

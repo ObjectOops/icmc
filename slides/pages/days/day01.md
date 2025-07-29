@@ -49,27 +49,31 @@ Helpful cheatsheets to reference:
 
 ### Week 1 - Foundations - <DateTitle offset=0 /> to <DateTitle offset=4 />
 
+<span text-sm>
+
 | <DateTitle offset=0 /> | <DateTitle offset=1 /> | <DateTitle offset=2 /> | <DateTitle offset=3 /> | <DateTitle offset=4 /> |
 | :---: | :---: | :---: | :---: | :---: |
 | Variables, Data Types, I/O | Using Data Types and Variables | Arrays, Strings, Functions, Intro to Classes | Control Flow, Data Structures | Imports / Packages, Exception Handling |
 
+</span>
+
 ### Week 2 - Projects - <DateTitle offset=7 /> to <DateTitle offset=11 />
+
+<span text-sm>
 
 | <DateTitle offset=7 /> | <DateTitle offset=8 /> | <DateTitle offset=9 /> | <DateTitle offset=10 /> | <DateTitle offset=11 /> |
 | :---: | :---: | :---: | :---: | :---: |
 | Time & Random, ANSI Escape Sequences | File I/O | Turtle, Lambdas | Multithreading | Project Presentations |
 
+</span>
+
 <v-click>
 
 ### Worksheets
 
-<span text-sm>
-
 - Worksheets will be frequently assigned, but <span v-mark.underline.pink="+1">are not graded</span>.
 - You may check your answers against the answer keys.
 - <span v-mark.underline.pink="+1">Both will be posted on these slides.</span>
-
-</span>
 
 </v-click>
 
@@ -284,6 +288,8 @@ routeAlias: keyboard_map
 
 ## Variables
 
+<span text-sm>
+
 <v-clicks>
 
 - A variable represents a piece of data
@@ -295,18 +301,17 @@ routeAlias: keyboard_map
 | *Types* | `byte`, `short`, <span v-mark.circle.pink="2">`int`</span>, `long` | `float`, <span v-mark.circle.pink="2">`double`</span> | `boolean` | `char` |
 | *Examples* | 0, -1, 32 | 3.14, -100.0, 0.0 | `true` or `false` | a, b, c, *, / |
 
-<span text-sm>Visit this website to learn more: [docs.oracle.com](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)</span>
-
-<Transform scale=0.9>
+Visit this website to learn more: [docs.oracle.com](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
 
 - Every variable has a name, names follow specific rules
   - Example valid names: `num`, `myNum`, `NUM`, `_num_`, `num1`  
-  <span text-sm>(`_` is the only special character that can be used)</span>
-  - Example invalid names: `int`, `my num`, `☹️`, `num`, `%num%`, `1num`, `my-num`
-
-</Transform>
+  (`_` is the only special character that can be used)
+  - Example invalid names: `int`, `my num`, `☹️`, `%num%`, `1num`, `my-num`,   
+  (and names that are already taken)
 
 </v-clicks>
+
+</span>
 
 <!-- Talk about what each type means. -->
 
@@ -401,14 +406,14 @@ import java.util.Scanner; // Required to use the scanner.
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(Systen.in); // Initialize a scanner.
+        Scanner scan = new Scanner(System.in); // Initialize a scanner.
         
+        String s = scan.nextLine();      // `nextLine` gets a string.
         int num = scan.nextInt();        // `nextInt` gets an integer.
         double num2 = scan.nextDouble(); // `nextDouble` gets a floating-point.
-        String s = scan.nextLine();      // `nextLine` gets a string.
         
         System.out.println("Values: " + num + " " + num2 + " " + s);
-        scan.close() // Remember to close the scanner.
+        scan.close(); // Remember to close the scanner.
     }
 }
 ```

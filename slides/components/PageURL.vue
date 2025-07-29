@@ -13,7 +13,7 @@ const href = computed(() => {
 
 const display = computed(() => {
   const url = href.value;
-  return url.replace(/^https?:\/\//, '');
+  return url.replace(/^https?:\/\//, '').replace("/presenter", "");
 });
 </script>
 

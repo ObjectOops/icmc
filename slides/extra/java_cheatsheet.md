@@ -23,13 +23,15 @@ import java.util.Scanner; // Required to use the scanner.
 
 // ...
 
-Scanner scan = new Scanner(Systen.in); // Initialize a scanner.
+Scanner scan = new Scanner(System.in); // Initialize a scanner.
 
+String s = scan.nextLine();      // `nextLine` gets a string.
 int num = scan.nextInt();        // `nextInt` gets an integer.
 double num2 = scan.nextDouble(); // `nextDouble` gets a floating-point.
-String s = scan.nextLine();      // `nextLine` gets a string.
 
-scan.close() // Remember to close the scanner.
+scan.close(); // Remember to close the scanner.
+
+// Refer to the slide in day 2 about buffers if your strings come back empty.
 ```
 
 ### Operators
