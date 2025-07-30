@@ -21,8 +21,10 @@ Answers: 101110111000, 100000000000
 
 3. Check your answers above using Python.
 
+Examples: 1a <carbon-arrow-right /> `int("10101010", 2)`, 2a <carbon-arrow-right /> `bin(3000)`
+
 4. Convert these binary numbers to hexadecimal (base 2 to base 16):  
-a) $1111\ 1110\ 1110\ 1101\ 1011\ 1110\ 1110\ 1111_2$ b) $1100\ 0000\ 1111\ 1110\ 1110_2$
+a) $1111\ 1110\ 1110\ 1101\ 1011\ 1110\ 1110\ 1111_2$ b) $1100\ 0000\ 1111\ 1111\ 1110\ 1110_2$
 
 Answers: FEEDBEEF, C0FFEE
 
@@ -32,6 +34,8 @@ $\text{DECAF123}_{16}$
 Answer: 1101 1110 1100 1010 1111 0001 0010 0011
 
 6. Check your answers above using Python.
+
+Examples: 4b <carbon-arrow-right /> `hex(int("110000001111111111101110", 2))`, 5 <carbon-arrow-right /> `bin(int("DECAF123", 16))`
 
 7. Find the character with ASCII code 73.
 
@@ -45,4 +49,6 @@ Answer: 65
 
 Answer: "ascii"
 
-10. Check you answers above using Python.
+10. Check your answers above using Python.
+
+Examples: `chr(73)`, `ord('A')`
