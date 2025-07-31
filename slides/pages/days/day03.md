@@ -293,7 +293,7 @@ zoom: 0.85
 
 <v-clicks depth=2>
 
-- When defining *strings* and *characters* in Java and Python, some characters cannot be usde directly.
+- When defining *strings* and *characters* in Java and Python, some characters cannot be used directly.
 ```python {monaco-run} {autorun:false}
 fail_string = "This is an "invalid string""
 ```
