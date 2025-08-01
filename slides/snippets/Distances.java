@@ -32,7 +32,7 @@ public class Distances {
         // There can be multiple ways to write a boolean expression:
         // return (
         //     !(main_path > other_path_a || main_path > other_path_b || main_path > other_path_c)
-        //     && !(main_path % 7 == 0 || main_path % 11 == 0)
+        //     || !(main_path % 7 == 0 || main_path % 11 == 0)
         // );
     }
 }

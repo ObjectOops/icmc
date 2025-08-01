@@ -19,7 +19,7 @@ def is_path_valid(main_path, other_path_a, other_path_b, other_path_c):
     # There can be multiple ways to write a boolean expression:
     # return (
     #     not (main_path > other_path_a or main_path > other_path_b or main_path > other_path_c)
-    #     and not (main_path % 7 == 0 or main_path % 11 == 0)
+    #     or not (main_path % 7 == 0 or main_path % 11 == 0)
     # )
 
 path_1_valid = is_path_valid(path_1, path_2, path_3, path_4)

@@ -58,7 +58,7 @@ src: day03.md#4-5,23
     - <span text-sm>The single equals sign *=* is already used as the assignment operator!</span>
   - *!=* <carbon-arrow-right /> inequality operator, tests if two values are not equal
   - *<* <carbon-arrow-right /> less than
-  - *>* <carbon-arrow-right /> greater then
+  - *>* <carbon-arrow-right /> greater than
   - *<=* <carbon-arrow-right /> less than or equal to
   - *>=* <carbon-arrow-right /> greater than or equal to
 
@@ -834,7 +834,7 @@ print(f"After: {nums=} {num=} {my_string=}")
 
 <v-clicks>
 
-The following program is an **algorithm** (steps to solve a program) that finds the smallest integer in a list of integers.
+The following program is an **algorithm** (steps to solve a problem) that finds the smallest integer in a list of integers.
 
 ```python {monaco-run} {autorun:false}
 nums = [-100, 400, 600, -200, 300, 0, -1, 500, -600, 800]
@@ -927,6 +927,9 @@ public class Main {
         int element = nums.get(2); // Gets the integer at index 2 --> 6
         System.out.println(element);
         
+        // Set an element at a specific index.
+        nums.set(1, 9); // Sets the element at index 1 to the value 9.
+        
         // Add an element to the end of the array-list.
         nums.add(5);
         
@@ -975,6 +978,9 @@ nums = [2, 4, 6, 8]
 
 # Get an element at a specific index.
 e = nums[2]
+
+# Set an element at a specific index.
+nums[1] = 9
 
 # Add an element to the end of the list.
 nums.append(5)
@@ -1028,6 +1034,9 @@ public class Main {
         System.out.println(element);
         element = nums.getLast();
         System.out.println(element);
+        
+        // Set an element at a specific index.
+        nums.set(1, 9); // Sets the element at index 1 to the value 9.
         
         // Add an element to the beginning and end of the linked-list.
         nums.addFirst(5);
