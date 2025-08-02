@@ -14,7 +14,7 @@ addons:
 
 ### Variables
 
-<Excalidraw drawFilePath="./variables_summary.excalidraw.json" />
+<Excalidraw drawFilePath="./days/day01/variables_summary.excalidraw.json" />
 
 ### Scanner
 
@@ -94,11 +94,11 @@ String s3 = s1 + s2; // --> s3 is "Hello, world!"
 
 ### Functions
 
-<Excalidraw drawFilePath="./functions.excalidraw.json" />
+<Excalidraw drawFilePath="./days/day03/functions.excalidraw.json" />
 
 ### By Reference
 
-<Excalidraw drawFilePath="./by_reference.excalidraw.json" />
+<Excalidraw drawFilePath="./days/day04/by_reference.excalidraw.json" />
 
 ---
 
@@ -108,7 +108,7 @@ String s3 = s1 + s2; // --> s3 is "Hello, world!"
 - <span text-sm>The single equals sign *=* is already used as the assignment operator!</span>
 - *!=* <carbon-arrow-right /> inequality operator, tests if two values are not equal
 - *<* <carbon-arrow-right /> less than
-- *>* <carbon-arrow-right /> greater then
+- *>* <carbon-arrow-right /> greater than
 - *<=* <carbon-arrow-right /> less than or equal to
 - *>=* <carbon-arrow-right /> greater than or equal to
 
@@ -164,6 +164,16 @@ Loop statements: `break`, `continue`
 
 ---
 
+### Classes
+
+<Transform scale=0.8>
+
+<<< @/snippets/ClassExample.java java
+
+</Transform>
+
+---
+
 ### Other Data Structures
 
 ```java
@@ -173,7 +183,11 @@ import java.util.ArrayList;
 // ...
 
 ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(2, 4, 6, 8));
+
+// Get / set an element at a specific index.
 int element = nums.get(2); // Gets the integer at index 2 --> 6
+nums.set(1, 9); // Sets the element at index 1 to the value 9.
+
 // Add an element to the end of the array-list.
 nums.add(5);
 
@@ -193,8 +207,11 @@ import java.util.LinkedList;
 // ...
 
 LinkedList<Integer> nums = new LinkedList<>(Arrays.asList(2, 4, 6, 8));
+
+// Get / set an element at a specific index.
 int element = nums.get(2); // Gets the integer at index 2 --> 6
-System.out.println(element);
+nums.set(1, 9); // Sets the element at index 1 to the value 9.
+
 // Other methods.
 element = nums.getFirst();
 System.out.println(element);
@@ -278,3 +295,7 @@ try {
     System.out.println(e.getMessage());
 }
 ```
+
+### Packages
+
+Refer to slides 140 - 144 on day 5 for how to use packages.
