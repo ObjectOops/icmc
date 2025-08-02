@@ -23,6 +23,7 @@ View live [here](https://objectoops.github.io/icmc/).
 - Covers additional topics in the second week
 - Includes beginner CS concepts like runtime complexity (but no recursion or ADTs)
 - Full-feature coding environment using [code-server](https://github.com/coder/code-server) via [mybinder.org](https://mybinder.org/)
+    - "Multiplayer" support using [this extension](https://open-vsx.org/extension/typefox/open-collaboration-tools)
 
 ## Forking
 

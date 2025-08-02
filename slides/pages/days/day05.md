@@ -347,7 +347,8 @@ zoom: 0.9
 
 ## Saving progress from Binder
 
-**Binder does not save your data for you. Follow these steps to save your files.**
+**Binder does not save your data for you. Follow these steps to save your files.**  
+[Click here to access the visual guide.](media/binder_save.pdf)
 
 ### Downloading
 
@@ -363,12 +364,18 @@ To upload your files to Binder:
 
 1. Right-click in an empty space inside the file explorer. Then click "Upload..." and upload your `workbench.zip` file that you previously downloaded.
 2. In the terminal, run the command `unzip -o workbench.zip`. Your files have been restored!
-3. Delete the file `workbench.zip`.
+3. Delete the file `workbench.zip` in the file explorer.
 
 <!-- 
 Demonstrate the saving process.
-Optionally, demonstrate the janky multiplayer functionality via the preinstalled extension.
+Optionally, demonstrate the janky multiplayer functionality via the preinstalled extension on the next slide.
 -->
+
+---
+
+## Collaborating with Binder
+
+[Click here to access the visual guide.](media/binder_collab.pdf)
 
 ---
 
