@@ -583,8 +583,7 @@ Integer division is demonstrated after casting in the following slides.
 
 ### Example - Python <logos-python />
 
-The same examples above, but in Python.  
-Similar to Java, but casting takes the form `type(value)`.
+Casting takes the form `type(value)`.
 
 ```python {monaco-run} {autorun:false}
 num = 3.14159
@@ -611,6 +610,7 @@ hideInToc: true
 
 ### Example - Java <logos-java />
 
+The same examples, but in Java.  
 Put `(type)` (where `type` is a data type) before a variable to cast it to another type.
 
 ```java {monaco-run} {autorun:false}

@@ -56,6 +56,16 @@ public class Main {
 
 ---
 
+```py
+import time
+
+print("Pausing execution for 3 seconds...");
+time.sleep(3)
+print("Done.")
+```
+
+---
+
 ### Getting the Time
 
 The following example prints the current year, month, day, and time.  
@@ -74,6 +84,17 @@ public class Main {
         System.out.println("Current time: " + formattedTime);
     }
 }
+```
+
+---
+
+```python {monaco-run} {autorun:false}
+from datetime import datetime
+
+now = datetime.now()
+time_string = now.strftime("%Y-%m-%d %H:%M:%S")
+
+print(time_string)
 ```
 
 ---

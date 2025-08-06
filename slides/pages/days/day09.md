@@ -72,6 +72,29 @@ class MyThread extends Thread {
 
 ---
 
+```py
+from threading import Thread
+
+def task(name):
+    for i in range(1, 11):
+        print(name + " - " + str(i))
+
+print("Starting threads...")
+
+t1 = Thread(target=task, args=["Thread A"])
+t2 = Thread(target=task, args=["Thread B"])
+
+t1.start(); # The Python interpreter will start Thread A, 
+t2.start(); # then proceed to start Thread B while Thread A is running.
+
+print("Threads started!")
+
+t1.join(); # Wait for Thread A to complete.
+t2.join(); # Wait for Thread B too.
+```
+
+---
+
 ## Tomorrow
 
 Share your projects with us!  

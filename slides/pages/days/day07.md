@@ -77,3 +77,34 @@ public class Main {
 ```
 
 <!-- Copy and run in external environment. -->
+
+---
+hideInToc: true
+---
+
+<!-- The Slidev Toc component is a bit bugged, so we need an empty header here. -->
+
+## 
+
+```py
+file_name = "example.txt"
+
+# Creating and writing to the file.
+with open(file_name, "w+") as writer:
+    writer.write("This is the first line.\n")
+    
+    print("File created and initial content written.")
+
+# Appending to the file.
+with open(file_name, "a") as writer:
+    writer.write("This is an appended line.\n")
+    
+    print("Additional content appended.");
+
+# Reading from the file.
+with open(file_name, "r") as reader:
+    print("Reading from file:")
+    
+    for line in reader.readlines():
+        print(line)
+```

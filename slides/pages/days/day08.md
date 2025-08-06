@@ -85,3 +85,17 @@ interface MyRunnableLambda {
     void run(String firstName, String lastName, int age);
 }
 ```
+
+---
+
+```python {monaco-run} {autorun:false}
+list_of_lambdas = [
+    lambda f, l, a: print(l + ", " + f + " is " + str(a) + " years old."), 
+    lambda f, l, a: print(f + " " + l + " is " + str(a) + " years old."), 
+    lambda f, l, a: print("Somebody is " + str(a) + " years old.")
+]
+
+lambda_to_use = 0
+
+list_of_lambdas[lambda_to_use]("Jane", "Doe", 20)
+```
