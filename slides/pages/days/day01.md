@@ -41,6 +41,7 @@ Bookmark this slide presentation to following along!
 <PageURL />
 
 - [Java Cheatsheet](media/java_cheatsheet.pdf)
+- [Python Cheatsheet](media/python_cheatsheet.pdf)
 - [Saving from Binder](media/binder_save.pdf)
 - [Collaborating with Binder](media/binder_collab.pdf)
 

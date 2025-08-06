@@ -84,6 +84,8 @@ String sub = s.substring(0, 5);
 String s1 = "Hello, ";
 String s2 = "world!";
 String s3 = s1 + s2; // --> s3 is "Hello, world!"
+
+int stringLength = s.length(); // Notice that the empty parenthesis "()" are required.
 ```
 
 ### Basic Escape Sequences
