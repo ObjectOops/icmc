@@ -7,6 +7,9 @@ transition: slide-left
 
 <StartupBadge />
 
+[Click here to submit your project.](https://forms.gle/69edmABWazjYcJLN9)  
+[Click here to view submitted projects.](https://drive.google.com/drive/folders/10YuRVFee-SDdna1ZuqVMa4UqmOX6WonnvLqaGNP70nlHKDLX_9uxBC14fLDviR3J605pLdmu?usp=sharing)
+
 **Agenda**
 
 - Multithreading
