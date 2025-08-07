@@ -98,6 +98,35 @@ print(time_string)
 ```
 
 ---
+
+## Random
+
+The function `Math.random()` returns a floating-point value $[0, 1)$.  
+That is, a number from 0 (inclusive) to 1 (exclusive).
+
+```java {monaco-run} {autorun:false}
+public class Main {
+    public static void main(String[] args) {
+        int maxValue = 10;
+        int randNum = (int)(Math.random() * (maxValue + 1));
+        
+        System.out.println("Random number between 0 and 10: " + randNum);
+    }
+}
+```
+
+---
+
+```python {monaco-run} {autorun:false}
+import random
+
+max_value = 10
+rand_num = random.randint(0, max_value + 1)
+
+print("Random number between 0 and 10:", rand_num)
+```
+
+---
 routeAlias: ansi_escape_sequences
 zoom: 0.7
 ---

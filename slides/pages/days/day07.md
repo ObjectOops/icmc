@@ -26,7 +26,7 @@ The following example demonstrates creating a file, writing to the file, adding 
 <carbon-arrow-right />
 
 ---
-zoom: 0.65
+zoom: 0.6
 ---
 
 ```java
@@ -43,6 +43,7 @@ public class Main {
         try {
             FileWriter writer = new FileWriter(fileName);
             writer.write("This is the first line.\n");
+            writer.close();
             
             System.out.println("File created and initial content written.");
         } catch (IOException e) {
@@ -53,6 +54,7 @@ public class Main {
         try {
             FileWriter writer = new FileWriter(fileName, true);
             writer.write("This is an appended line.\n");
+            writer.close();
             
             System.out.println("Additional content appended.");
         } catch (IOException e) {
@@ -69,6 +71,8 @@ public class Main {
             while ((line = reader.readLine()) != null) {
                 System.out.println(line);
             }
+
+            reader.close();
         } catch (IOException e) {
             System.out.println("Error reading from file: " + e.getMessage());
         }
