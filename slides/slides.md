@@ -18,7 +18,7 @@ info: |
   [Source Code](https://github.com/ObjectOops/icmc/)
 author: Alex Yao
 presenter: true
-browserExporter: dev
+browserExporter: true
 download: ./media/export.pdf
 lineNumbers: true
 remoteAssets: build
