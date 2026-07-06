@@ -313,12 +313,16 @@ class Main {
 layout: default
 ---
 
-<div class="grid grid-cols-[55%_40%] gap-6 text-[0.70rem] line-height-[1.15]">
+<Transform scale=0.8>
 
-<div>
-
-```java
+```java {monaco-run} {autorun:false}
 class Main {
+    public static void main(String[] args) {
+        int[] arr = {15, 11, 22, 35, 16};
+        mergeSort(arr, 5);
+        System.out.println(java.util.Arrays.toString(arr));
+    } 
+    
     public static void mergeSort(int[] a, int n) {
         if (n < 2) return;
         int mid = n / 2;
@@ -345,27 +349,29 @@ class Main {
 }
 ```
 
-</div>
+</Transform>
 
-<div>
+---
+layout: two-cols
+---
 
-```java {monaco-run} {autorun:false}
-class Main {
-    public static void main(String[] args) {
-        int[] arr = {15, 11, 22, 35, 16};
-        mergeSort(arr, 5);
-        System.out.println(java.util.Arrays.toString(arr));
-    }
+## Bar Graph Visualizations
 
-    public static void mergeSort(int[] a, int n) {}
-}
-```
+[Selection Sort](https://youtu.be/92BfuxHn2XE?si=bugWMqPeydWaSPu3)
 
-</div>
+<iframe width="400" src="https://www.youtube.com/embed/92BfuxHn2XE?si=KgCzErpZtlZc6zkh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-</div>
+[Insertion Sort](https://youtu.be/8oJS1BMKE64?si=3p2svD_zVKcrUqab)
 
---- 
+<iframe width="400" src="https://www.youtube.com/embed/8oJS1BMKE64?si=K-BRsb5P8zQYvi-f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+::right::
+
+[Merge Sort](https://youtu.be/ZRPoEKHXTJg?si=QUbawooci1iltnMy)
+
+<iframe width="400" src="https://www.youtube.com/embed/ZRPoEKHXTJg?si=nNcWlEMZYkF2CDjn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
 
 ## Break
 
@@ -373,7 +379,7 @@ Have a break!
 
 <RandomPicture />
 
---- 
+---
 
 ## Packages
 
