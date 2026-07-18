@@ -34,6 +34,7 @@ drawings:
 date: 2026-07-20
 timezone: -05:00
 startupLink: https://mybinder.org/v2/gh/ObjectOops/icmc/binder?urlpath=vscode
+startupColabLink: https://colab.research.google.com/drive/1JE6b-MGMHciBf6I4CpYctWPioh-sXCzr?usp=sharing
 githubSnippets: https://github.com/ObjectOops/icmc/blob/main/slides/snippets
 
 src: pages/title.md

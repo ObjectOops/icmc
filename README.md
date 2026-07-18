@@ -40,6 +40,8 @@ View live [here](https://objectoops.github.io/icmc/).
    - `timezone` - timezone of the date above
    - `startupLink` - Binder URL. Generate your own with your forked repo at [mybinder.org](https://mybinder.org/)
      - Binder badge links in the presentation will reflect this URL
+   - `startupColabLink` - Google Colab notebook URL. Upload `colab/icmc.ipynb` to your Drive.
+     - Colab badge links in the presentation will reflect this URL
    - `githubSnippets` - URL to snippets directory in your forked repo
      - Some large code blocks include a link to their respective file inside this directory
      - Your repo will need to be public if these links are to be used
@@ -51,6 +53,7 @@ View live [here](https://objectoops.github.io/icmc/).
 
 ___
 
-The following Binder link is intended for opening a Java + Python environment in `workbench`.
+The following Binder and Colab links are intended for opening a Java + Python environment in `workbench`.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ObjectOops/icmc/binder?urlpath=vscode)
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1JE6b-MGMHciBf6I4CpYctWPioh-sXCzr?usp=sharing)

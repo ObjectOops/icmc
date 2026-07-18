@@ -89,7 +89,7 @@ Bookmark this slide presentation to following along!
 
 <div>
 
-- Click on the button below to open up a **Binder**.
+- Click on the button below to open up a **Binder** or **Colab notebook** (*new!*).
 
 <AutoFitText min=0 max=1>
 <span v-mark.circle.pink="1">
